@@ -45,7 +45,7 @@ you will need to use the WINEPREFIX command to set this 244210/pfx folder so tha
 
 after that install the latest version of [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), and put it to run on steam as the main Proton.
 
-It is common for the game or content manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running! [e.g](https://github.com/vitorserveja/Sakaki-AC-Linux-Guide/prints/)
+It is common for the game or content manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running! [e.g](https://github.com/vitorserveja/Sakaki-AC-Linux-Guide/tree/main/prints)
 
 ## Modding
 
