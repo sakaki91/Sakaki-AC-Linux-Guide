@@ -37,7 +37,7 @@ when you press play using Proton 5.0 even if the game doesn't open, or crashes, 
 you will need to use the WINEPREFIX command to set this 244210/pfx folder so that we can install the game's dependencies, if your game is on another disk or directory the path changes, e.g.: mine is on another disk in the location: *`/run/media/user/mydisk/SteamLibrary/steamapps/compatdata/244210/pfx`*, in this case we would use the command: `$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx`, (or the directory of your created prefix if your game is installed on another disk/directory, this directory that I show is the default one that comes).
 #### Many commands here are from my .bash_history, I put it in full here, if some things are already installed or repeat when installing dependencies, no problem, they work!
 
-`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx wine dotnet48 dotnet472 vcrun2015 d3dx9 d3dcompiler_43 corefonts d3dcompiler_47 dotnet452`
+`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks dotnet48 dotnet472 vcrun2015 d3dx9 d3dcompiler_43 corefonts d3dcompiler_47 dotnet452`
 
 `% WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winecfg` with this command you will open winecfg, I recommend changing the "windows version" to: Windows 10, then you click on the libraries tab, type dwrite and then click on add and then click on apply.
 
