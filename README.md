@@ -22,7 +22,7 @@ Memory: 6962MiB / 15941MiB<br>
 
 ## Dependencies and Information
 
-In this guide, the native Steam from the Arch Linux MULTILIB repository was used, it will work for .deb and NATIVE variants, this guide needs to be adapted for Flatpak, for Flatpak it works but needs adjustments and conversion of commands or change of directories, soon I will bring a tutorial for Flatpak!
+In this guide, the native Steam from the Arch Linux MULTILIB repository was used, and Wine-Stable(wine-10.8) and Winetricks, it will work for .deb and NATIVE variants, this guide needs to be adapted for Flatpak, for Flatpak it works but needs adjustments and conversion of commands or change of directories, soon I will bring a tutorial for Flatpak!
 
 Dependencies: Steam (Native), wine, winetricks<br>
 e.g  `$ sudo pacman -S steam wine winetricks` or `$ sudo apt install steam wine winetricks -y`
