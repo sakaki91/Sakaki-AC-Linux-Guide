@@ -1,4 +1,4 @@
-# Assetto Corsa Linux Guide
+# Assetto Corsa Linux Guide - Unstable, currently developing fixes!
 Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 [Configuration Used](#configuration-used) | [Dependencies](#dependencies-and-information) | [Installation](#installation) | [Modding](#modding) | [Online](#online)
 ## Configuration used:
