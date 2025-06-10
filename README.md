@@ -5,52 +5,52 @@ Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 
 OS: Arch Linux x86_64<br>
 Host: H81<br>
-Kernel: 6.14.7-arch2-1<br>
-Uptime: 12h 10m<br>
-Packages: 903 (pacman), 22 (flatpak) <br>
-Shell: bash 5.2.37 <br>
-Resolution: 1440x900 <br>
-DE: Plasma 6.3.5 <br>
-WM: kwin <br>
-Theme: Breeze-Dark [GTK2], Breeze [GTK3] <br>
-Icons: breeze-dark [GTK2/3] <br>
-Terminal: konsole <br>
-CPU: Intel i5-4590 (4) @ 3.7GHz [36.0°on] <br>
-CPU Usage: 31% <br>
-GPU: AMD ATI Radeon 540/540X/550/550X / RX 540X/550/550X <br>
-GPU Driver: amdgpu <br>
-Memory: 8.16GiB / 15.57GiB (52%) <br>
-Disk (/): 96G / 233G (44%) <br>
+Kernel: 6.15.1-arch1-2<br>
+Uptime: 2 hours, 17 mins<br>
+Packages: 858 (pacman), 7 (flatpak)<br>
+Shell: bash 5.2.37<br>
+Resolution: 1440x900<br>
+DE: GNOME 48.2<br>
+WM: Mutter<br>
+WM Theme: Adwaita<br>
+Theme: Adwaita [GTK2/3]<br>
+Icons: Adwaita [GTK2/3]<br>
+Terminal: kgx<br>
+CPU: Intel i5-4590 (4) @ 3.700GHz<br>
+GPU: AMD ATI Radeon 540/540X/550/550X / RX 540X/550/550X<br>
+Memory: 6962MiB / 15941MiB<br>
 
 ## Dependencies and Information
 
-In this guide, the native Steam from the Arch Linux Multilib repository was used, it will work for .deb and NATIVE variants, this guide needs to be adapted for Flatpak, for Flatpak it works but needs adjustments and conversion of commands or change of directories, soon I will bring a tutorial for Flatpak!
+In this guide, the native Steam from the Arch Linux MULTILIB repository was used, it will work for .deb and NATIVE variants, this guide needs to be adapted for Flatpak, for Flatpak it works but needs adjustments and conversion of commands or change of directories, soon I will bring a tutorial for Flatpak!
 
 Dependencies: Steam (Native), wine, winetricks<br>
 e.g  `$ sudo pacman -S steam wine winetricks` or `$ sudo apt install steam wine winetricks -y`
 
 ## Installation
 
-now you need to install the game, and in the game properties on Steam and select the "Compatibility" tab and then "Force use of the Steam Play Compatibility Tool", and below select the Proton 5.0-10 version, after that click Play, probably the game will not open, it will have a silent Crash, as soon as the Play button appears again, you minimize Steam and open the terminal<br>
+<p>(IMPORTANT) - If you have already tried to run the game on Linux, I strongly recommend that you delete the game prefix (usually in ~/.steam/steam/steamapps/compatdata/244210/) and you must delete the winetricks cache with `$ rm -rf ~/.cache/winetricks` (if you have never used it, you do not need to delete it), and from there you can follow the tutorial below.</p>
+<p>The game was tested and run on Arch Linux x86_64, the game was tested several times looking for defects and debugging the crashes, with this guide it is 100% certain that you will be able to run the game (on Arch Linux at least), a while ago I tested it on Linux Mint too, in a similar way, I believe the guide will also work for Ubuntu/Debian-like too, but I found problematic distros to run the game, I tried Fedora 42 but I was not successful in running the game, soon I will look for the appropriate solutions for these other popular distros, and I will find a way to run Assetto Corsa using the Steam Flatpak too soon!</p>
 
-when you press play using Proton 5.0 even if the game doesn't open, or crashes, it created a VERY important prefix in the compatdata folder in the Steam folder, usually located at ~/.steam/steam/steamapps/compatdata, inside the compatdata folder the 244210 folder was created and inside it will be the pfx/ folder
-you will need to use the WINEPREFIX command to set this 244210/pfx folder so that we can install the game's dependencies, if your game is on another disk or directory the path changes, e.g.: mine is on another disk in the location: *`/run/media/user/mydisk/SteamLibrary/steamapps/compatdata/244210/pfx`*, in this case we would use the command: `$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx`, (or the directory of your created prefix if your game is installed on another disk/directory, this directory that I show is the default one that comes).
-#### Many commands here are from my .bash_history, I put it in full here, if some things are already installed or repeat when installing dependencies, no problem, they work!
+<p>now you need to install the game, and in the game properties on Steam and select the "Compatibility" tab and then "Force use of the Steam Play Compatibility Tool", and below select the Proton 5.0-10 version, after that click Play, probably the game will not open, it will have a silent Crash, as soon as the Play button appears again, you minimize Steam and open the terminal</p>
 
-`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks dotnet48 dotnet472 vcrun2015 d3dx9 d3dcompiler_43 corefonts d3dcompiler_47 dotnet452`
+<p>when you press play using Proton 5.0 even if the game doesn't open, or crashes, it created a VERY important prefix in the compatdata folder in the Steam folder, usually located at ~/.steam/steam/steamapps/compatdata, inside the compatdata folder the 244210 folder was created and inside it will be the pfx/ folder
+you will need to use the WINEPREFIX command to set this 244210/pfx folder so that we can install the game's dependencies, if your game is on another disk or directory the path changes, e.g.: mine is on another disk in the location: *`/run/media/user/mydisk/SteamLibrary/steamapps/compatdata/244210/pfx`*, in this case you will use the following commands:</p>
 
+`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks dotnet48`<br>
+`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks d3dcompiler_47`<br>
+`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks vcrun2015`<br>
+<br>
 `% WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winecfg` with this command you will open winecfg, I recommend changing the "windows version" to: Windows 10, then you click on the libraries tab, type dwrite and then click on add and then click on apply.
 
-then try opening the game via Steam again, if it doesn't open or there is an error it is most likely because of dotnet48, you will need to install it via the offline .exe installer by downloading it from this [link](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-8-offline-installer-for-windows-9d23f658-3b97-68ab-d013-aa3c3e7495e0)<br>
-and to install use the following command: `$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx wine dotnet-file-you-just-downloaded.exe`
-If your game is already opening and is playable, you can disregard this part.
-
 after that install the latest version of [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), and put it to run on steam as the main Proton.
+
+It is common for the game or content manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running! [e.g](https://github.com/vitorserveja/Sakaki-AC-Linux-Guide/prints/)
 
 ## Modding
 
 Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsaBackup.exe*<br>
-then download the [Content Manager](https://assettocorsa.club/content-manager.html) and extract it to the main Assetto Corsa folder, and rename Content Manager.exe to Assetto Corsa.exe and open the game via Steam.<br>
+then download the [Content Manager](https://assettocorsa.club/content-manager.html) and extract it to the main Assetto Corsa folder, and rename *Content Manager.exe* to *AssettoCorsa.exe* and open the game via Steam.<br>
 then the Content Manager will open, you can configure and modify as you wish, I recommend using version 0.2.0 of the Custom Shaders Patch, avoid very new or very old versions!
 
 ## Online
