@@ -13,7 +13,7 @@ Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 
 In this guide, the native Steam from the Arch Linux MULTILIB repository was used, and Wine-Stable(wine-10.8 [Arch Linux]) and Wine-Stable(wine-8.0 [Debian 8.0~repack-4]) and Winetricks, it will work for .deb and NATIVE variants, this guide needs to be adapted for Flatpak, for Flatpak it works but needs adjustments and conversion of commands or change of directories, soon I will bring a tutorial for Flatpak!
 
-Dependencies: Steam (Native), wine, winetricks, ruby, gem and wine-mono (Thanks to @Nicodemus on [protonDB](https://www.protondb.com/app/244210) for the help and feedback on installing wine-mono!)<br>
+Dependencies: Steam (Native), wine, winetricks, ruby, gem and wine-mono (Thanks to @Nicodemus on [protonDB](https://www.protondb.com/app/244210) for the help and feedback on installing wine-mono!), install wine-mono if you can't open the game with the settings below<br>
 e.g:<br>
 `$ sudo pacman -S steam wine winetricks ruby && sudo gem install colorize fileutils`<br>
 or<br>
