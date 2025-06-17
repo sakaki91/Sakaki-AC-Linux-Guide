@@ -2,12 +2,12 @@
 Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 - [Dependencies](#dependencies-and-information)
 - [Installation](#installation)
-	- [Manual](#manual)
-	- [Native](#native)
-	- [Flatpak](shortly)
-  - [Modding](#modding)
-  - [Online](#online)
-  - [Configuration Used](#configuration-used)
+  - [Manual](#manual)
+  - [Native](#native)
+  - [Flatpak](shortly)
+- [Modding](#modding)
+- [Online](#online)
+- [Configuration Used](#configuration-used)
 
 ## Dependencies and Information
 
