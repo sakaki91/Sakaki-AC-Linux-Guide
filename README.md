@@ -12,7 +12,8 @@ Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 
 detail: the guide is only stable for Arch Linux and derivatives, I am currently exploring LMDE and it is working but it is still experimental, I will look for stability and then I will try to adapt it to Fedora with wine-staging
 
-Recommended Installation: [Manual](#manual), because besides being intuitive, you will most likely learn how WINEPREFIX, wine and winetricks work and the like!
+Recommended Installation: [Manual](#manual), because besides being intuitive, you will most likely learn how WINEPREFIX, wine and winetricks work and the like!<br>
+The installation script is not yet as stable as the guide itself, but I promise to improve this over time!
 
 ## Dependencies and Information
 
