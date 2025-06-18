@@ -1,5 +1,6 @@
 # Assetto Corsa Linux Guide - Stable 0.3
 Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
+
 - [Dependencies](#dependencies-and-information)
 - [Installation](#installation)
   - [Manual](#manual)
@@ -8,6 +9,8 @@ Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 - [Modding](#modding)
 - [Online](#online)
 - [Configuration Used](#configuration-used)
+
+detail: the guide is only stable for Arch Linux and derivatives, I am currently exploring LMDE and it is working but it is still experimental, I will look for stability and then I will try to adapt it to Fedora with wine-staging
 
 ## Dependencies and Information
 
