@@ -57,7 +57,7 @@ After that install the latest version of [Proton GE](https://github.com/Glorious
 Download wine-mono-XX-X-X-x86.msi for the version of Proton you are using from [WineHQ](https://dl.winehq.org/wine/wine-mono/), e.g: For Proton 10.1 download the Wine 10.1 MSI installer.
 
 Once downloaded, run the next command:
-`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx wine uninstall`
+`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx wine uninstaller`
 
 Once a window pops up, click on `install` and then select the wine-mono-XX-X-X-x86.msi file that was downloaded.
 > [!NOTE]
