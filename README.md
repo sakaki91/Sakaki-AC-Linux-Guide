@@ -101,6 +101,8 @@ and get your IP and the server is open, click on the favorites tab in Content Ma
 
 ## Configuration used:
 
+### For Arch Linux
+
 OS: Arch Linux x86_64<br>
 Host: H81<br>
 Kernel: 6.15.1-arch1-2<br>
@@ -118,7 +120,7 @@ CPU: Intel i5-4590 (4) @ 3.700GHz<br>
 GPU: AMD ATI Radeon 540/540X/550/550X / RX 540X/550/550X<br>
 Memory: 6962MiB / 15941MiB<br>
 
-### And
+### For LMDE 6
 
 OS: LMDE 6 (faye) x86_64<br>
 Host: H81<br>
@@ -139,13 +141,13 @@ Memory: 6447MiB / 15948MiB<br>
 
 ### For Linux Mint 22.1 
 
-OS: Linux Mint 22.1 x86_64
-Kernel: 6.8.0-51-generic
-Shell: bash 5.2.| 
-DE: Cinnamon 6.4.6 
-WM: Mutter (Muffin)
-CPU: AMD Ryzen 5 3400G
-GPU: NVIDIA GeForce RTX 2060
-Memory: 15928MiB
+OS: Linux Mint 22.1 x86_64<br>
+Kernel: 6.8.0-51-generic<br>
+Shell: bash 5.2.|<br>
+DE: Cinnamon 6.4.6 <Br>
+WM: Mutter (Muffin)<br>
+CPU: AMD Ryzen 5 3400G<br>
+GPU: NVIDIA GeForce RTX 2060<br>
+Memory: 15928MiB<br>
 
 ## LONG LIVE LINUX GAMING!
