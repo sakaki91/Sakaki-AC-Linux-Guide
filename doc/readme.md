@@ -1,7 +1,7 @@
 ### Used and tested distributions
 - Used and tested distributions:
   - Arch Linux: (Stable and functional!) ✅<br>
-  - Linux Mint: (Stable and functional!) ✅<br>
+  - Linux Mint: (Stable and functional!) ✅ (Thanks to [**@pezfisk**](https://github.com/pezfisk) for testing!)<br>
   - LMDE 6 faye: (Unstable, functional and experimental!) ⚠️<br>
 > [!IMPORTANT]
 > Several distributions are being tested, evaluated and adapted, please be patient, we are working hard to create a bridge from Assetto Corsa to Linux
