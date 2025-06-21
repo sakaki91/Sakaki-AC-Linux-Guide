@@ -68,6 +68,12 @@ def installOnly
     print"Press Enter to continue, then winecfg will automatically open in the chosen prefix, select the Windows 10 system version, and add dwrite.dll in the libraries tab!"
     gets
     system({ 'WINEPREFIX' => install_path }, "winecfg")
+    system"clear"
+    print"Download wine-mono from WineHQ for the Proton version you will be using: https://dl.winehq.org/wine/wine-mono/"
+    print"Then, when you press ENTER, a window will open, click the 'install' button and select the wine-mono msi installer you downloaded."
+    gets
+    system({ 'WINEPREFIX' => install_path }, "wine uninstall")
+    system"clear"
     break
   end
 end
