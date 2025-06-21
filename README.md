@@ -1,4 +1,4 @@
-# Assetto Corsa Linux Guide - Stable 0.3_3
+# Assetto Corsa Linux Guide - In development 0.3_3
 Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 
 - [Dependencies](#dependencies-and-information)
