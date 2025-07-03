@@ -8,9 +8,9 @@
 
 ### Tested configurations:  
 - __Arch Linux x86_64__
-  - Kernel: 6.15.1-arch1-2  
+  - Kernel: 6.15.1-arch1-2 and Linux 6.15.4-zen2-1-zen  
   - Shell: bash 5.2.37  
-  - DE: GNOME 48.2  
+  - DE: GNOME 48.2/3
   - WM: Mutter<br>
   - CPU: Intel i5-4590  
   - GPU: AMD Radeon RX550  
