@@ -26,9 +26,9 @@ Once downloaded, run the next command:
 
 Once a window pops up, click on `install` and then select the wine-mono-XX-X-X-x86.msi file that was downloaded.  
 <br>
-> [!NOTE]
+> [!IMPORTANT]
 > **See also:**
 > - [Modding](../modding)
->   - [Online](../online)
->   - [Collaborators](thanks-to-collaborators.md)
->   - [Configuration Used](.)
+> - [Online](../online)
+> - [Collaborators](thanks-to-collaborators.md)
+> - [Configuration Used](.)
