@@ -1,4 +1,4 @@
-# Assetto Corsa Linux Guide - In development 0.3_4
+# Assetto Corsa Linux Guide - In development 0.4
 Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 
 - [Dependencies](#dependencies-and-information)
@@ -20,11 +20,11 @@ The installation script is not yet as stable as the guide itself, but I promise 
 
 In this guide, the native Steam from the Arch Linux MULTILIB repository was used, and Wine-Stable(wine-10.8 [Arch Linux]) and Wine-Stable(wine-8.0 [Debian 8.0~repack-4]) and Winetricks, it will work for .deb and NATIVE variants, this guide needs to be adapted for Flatpak, for Flatpak it works but needs adjustments and conversion of commands or change of directories, soon I will bring a tutorial for Flatpak!
 
-**Dependencies**: Steam (Native), wine, winetricks, ruby, gem and wine-mono (Thanks to @Nicodemus on [protonDB](https://www.protondb.com/app/244210) for the help and feedback on installing wine-mono!), install wine-mono if you can't open the game with the settings below<br>
+**Dependencies**: Steam (Native), wine, winetricks, wine-mono (Thanks to @Nicodemus on [protonDB](https://www.protondb.com/app/244210) for the help and feedback on installing wine-mono!), install wine-mono if you can't open the game with the settings below<br>
 e.g:<br>
-`$ sudo pacman -S steam wine winetricks ruby && sudo gem install colorize fileutils`<br>
+`$ sudo pacman -S steam wine winetricks`<br>
 or<br>
-`$ sudo apt install steam wine winetricks ruby -y && sudo gem install colorize fileutils`
+`$ sudo apt install steam wine winetricks`
 <br><br>
 ## Installation:
 ### Manual
@@ -61,16 +61,18 @@ Once downloaded, run the next command:
 
 Once a window pops up, click on `install` and then select the wine-mono-XX-X-X-x86.msi file that was downloaded.
 > [!NOTE]
-> It is common for the game or content manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running!
+> It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running!
 <br><br>
 ## Native
 
 > [!WARNING]
-> The script was written in Ruby and depends 100% on it, the code is open to anyone who wants to see and explore the possibilities, the script will basically automate the installation of dependencies and the like, it has user data input, being possible to insert the prefix when the script asks for it, it has been tested several times (LMDE)
+> The script was written in Shell-Script (SH/Bash) and depends 100% on it, the code is open to anyone who wants to see and explore the possibilities, the script will basically automate the installation of dependencies and the like, it has user data input, being possible to insert the prefix when the script asks for it, it has been tested several times
 
 `$ git clone https://github.com/vitorserveja/Sakaki-AC-Linux-Guide/`<br>
 `$ cd Sakaki-AC-Linux-Guide/`<br>
-`$ ruby install.rb`<br>
+`$ sh generic-run.sh`<br>
+and to install the Content Manager:  
+`$ sh modding.sh`
 
 <p>
 I recommend that you delete the current prefix if you are using the script, so that a clean installation can be done.
@@ -91,7 +93,7 @@ then the Content Manager will open, you can configure and modify as you wish, I 
 
 Online mode also works smoothly, both public kunos servers and LAN servers, but it requires some adjustments. On Arch Linux, it didn't need so many adjustments, but if your system has an active Firewall, you will need to approve the Assetto Corsa ports on your firewall, e.g.: `% sudo ufw allow 9600:9700/udp && sudo ufw allow 9600:9700/tcp`, or approve them on your firewall.<br>
 
-and to enter private/LAN servers it is more complicated, you will need to click on the Online > Kunos tabs, and add any server to Favorites, after adding, some new tabs will appear within Online: Favorites, Recent and LAN, you will need to open the server through Content Manager (or if your friend opens it you will need his IP, usually it is in Hamachi or Radmin), but if you open the server, the LAN tab of Content Manager for Linux is broken and does not work, if your friend is on Windows he will see your server open in LAN, but you will not see it, to enter your own server you can type in the terminal: ip addr show, and get your IP that will be saved in the network interface you are connected to, e.g: `*enp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+and to enter private/LAN servers it is more complicated, you will need to click on the Online > Kunos tabs, and add any server to Favorites, after adding, some new tabs will appear within Online: Favorites, Recent and LAN, you will need to open the server through Content Manager (or if your friend opens it you will need his IP, usually it is in Hamachi or Radmin), but if you open the server, the LAN tab of Content Manager for Linux is broken and does not work, if your friend is on Windows he will see your server open in LAN, but you will not see it, to enter your own server you can type in the terminal: `$ ip addr show`, and get your IP that will be saved in the network interface you are connected to, e.g: `*enp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
 link/ether ########## brd ff:ff:ff:ff:ff:ff 
 altname ############ 
 inet 192.###.#.#/24* ## This last part where it says inet and some numbers is your IP`<br>
