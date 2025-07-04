@@ -28,7 +28,7 @@ Once a window pops up, click on `install` and then select the wine-mono-XX-X-X-x
 <br>
 > [!IMPORTANT]
 > **See also:**
-> - [Modding](../modding)
-> - [Online](../online)
+> - [Modding](modding.md)
+> - [Online](online.md)
 > - [Collaborators](thanks-to-collaborators.md)
 > - [Configuration Used](.)
