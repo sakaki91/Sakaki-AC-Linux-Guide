@@ -8,6 +8,8 @@
 <p>When you press play using Proton 5.0 even if the game doesn't open, or crashes, it created a VERY important prefix in the compatdata folder in the Steam folder, usually located at /home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210 folder the 244210 folder was created and inside it will be the pfx/ folder
 you will need to use the WINEPREFIX command to set this 244210/pfx folder so that we can install the game's dependencies</p>
 
+> Dependencies: steam, wine, winetricks, flatpak, and wine-mono if you have difficulty installing dotnet packages.
+
 > [!NOTE]
 > If your game is on another disk or directory the path changes, e.g.: mine is on another disk in the location: `/run/media/user/mydisk/SteamLibrary/steamapps/compatdata/244210/pfx`, in this case you should replace the directory to that in the other disk.</p>
 
