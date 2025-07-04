@@ -11,6 +11,11 @@ Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 - [Online](#online)
 - [Configuration Used](doc)
 - [Collaborators](doc/thanks-to-collaborators.md)
+
+
+> [!NOTE]
+> It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running!
+
 > [!IMPORTANT]
 > The guide is only stable for Arch Linux and derivatives and Linux Mint (Tested on 20/06/2025), I am currently exploring LMDE and it is working but it is still experimental, I will look for stability and then I will try to adapt it to Fedora with wine-staging
 
@@ -38,38 +43,6 @@ or<br>
 
 ### Flatpak
 
-<p>The game was tested and run on Arch Linux x86_64 (Flatpak), the game was tested several times looking for defects and debugging the crashes, with this guide it is 100% certain that you will be able to run the game, in a similar way, I believe the guide will also work for Ubuntu/Debian-like too, but I found problematic distros to run the game, soon I will look for the appropriate solutions for these other popular distros!</p>
-
-<p>Now you need to install the game, and in the game properties on Steam and select the "Compatibility" tab and then "Force use of the Steam Play Compatibility Tool", and below select the **Proton 5.0-10** version, after that click Play, probably the game will not open, it will have a silent Crash, as soon as the Play button appears again, you minimize Steam and open the terminal</p>
-
-<p>When you press play using Proton 5.0 even if the game doesn't open, or crashes, it created a VERY important prefix in the compatdata folder in the Steam folder, usually located at /home/sakaki/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210 folder the 244210 folder was created and inside it will be the pfx/ folder
-you will need to use the WINEPREFIX command to set this 244210/pfx folder so that we can install the game's dependencies</p>
-
-> [!NOTE]
-> If your game is on another disk or directory the path changes, e.g.: mine is on another disk in the location: `/run/media/user/mydisk/SteamLibrary/steamapps/compatdata/244210/pfx`, in this case you should replace the directory to that in the other disk.</p>
-
-`$ WINEPREFIX=/home/sakaki/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks dotnet48`<br>
-`$ WINEPREFIX=/home/sakaki/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks d3dcompiler_47`<br>
-`$ WINEPREFIX=~/home/sakaki/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks vcrun2015`<br>
-`$ WINEPREFIX=/home/sakaki/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks dxvk`<br>
-<br>
-`$ WINEPREFIX=/home/sakaki/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winecfg`
-- <p>With this command you will open winecfg, I recommend changing the "windows version" to: Windows 10, then you click on the libraries tab, type dwrite and then click on add and then click on apply.</p>
-
-you also need to install proton ge support via flatpak using: `flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE`
-After that install the latest version of [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), and put it to run on steam as the main Proton.
-
-#### How to install wine-mono
-
-Download wine-mono-XX-X-X-x86.msi for the version of Proton you are using from [WineHQ](https://dl.winehq.org/wine/wine-mono/), e.g: For Proton 10.1 download the Wine 10.1 MSI installer.
-
-Once downloaded, run the next command:
-`$ WINEPREFIX=/home/sakaki/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx wine uninstaller`
-
-Once a window pops up, click on `install` and then select the wine-mono-XX-X-X-x86.msi file that was downloaded.
-> [!NOTE]
-> It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running!
-<br><br>
 
 ### Native Script
 
