@@ -18,14 +18,12 @@ you will need to use the WINEPREFIX command to set this 244210/pfx folder so tha
 With this command you will open winecfg, I recommend changing the "windows version" to: Windows 10, then you click on the libraries tab, type dwrite and then click on add and then click on apply.
 
 If necessary, install Wine Mono manually, but usually Wine installs it by itself.  
-Install Wine Mono for the version of Proton you are using from [WineHQ](https://dl.winehq.org/wine/wine-mono/), for example: For Proton 10.1, download the Wine 10.1 MSI installer. Then install the latest version of Proton GE and run it in Steam as the main Proton.  
+Install Wine Mono for the version of Proton you are using from [WineHQ](https://dl.winehq.org/wine/wine-mono/), for example: For Proton 10.1, download the Wine 10.1 MSI installer.  
+Once downloaded, run the next command:
+`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx wine uninstaller`  
+Once a window pops up, click on `install` and then select the wine-mono-XX-X-X-x86.msi file that was downloaded.   
 After that install the latest version of [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), and put it to run on steam as the main Proton.  
 
-Once downloaded, run the next command:
-`$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx wine uninstaller`
-
-Once a window pops up, click on `install` and then select the wine-mono-XX-X-X-x86.msi file that was downloaded.  
-<br>
 > [!IMPORTANT]
 > **See also:**
 > - [Modding](modding.md)
