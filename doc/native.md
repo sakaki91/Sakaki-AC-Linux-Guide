@@ -17,7 +17,7 @@ you will need to use the WINEPREFIX command to set this 244210/pfx folder so tha
 `$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks vcrun2015`<br>
 `$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks dxvk`<br>
 `$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winecfg`<br>
-With this command you will open winecfg, I recommend changing the "windows version" to: Windows 10, then you click on the libraries tab, type dwrite and then click on add and then click on apply.
+- With this command you will open winecfg, I recommend changing the "windows version" to: Windows 10, then you click on the libraries tab, type dwrite and then click on add and then click on apply.
 
 If necessary, install Wine Mono manually, but usually Wine installs it by itself.  
 Install Wine Mono for the version of Proton you are using from [WineHQ](https://dl.winehq.org/wine/wine-mono/), for example: For Proton 10.1, download the Wine 10.1 MSI installer.  
