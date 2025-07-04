@@ -5,7 +5,7 @@
 <p>Now you need to install the game, and in the game properties on Steam and select the "Compatibility" tab and then "Force use of the Steam Play Compatibility Tool", and below select the **Proton 5.0-10** version, after that click Play, probably the game will not open, it will have a silent Crash, as soon as the Play button appears again, you minimize Steam and open the terminal</p>
 
 
-<p>When you press play using Proton 5.0 even if the game doesn't open, or crashes, it created a VERY important prefix in the compatdata folder in the Steam folder, usually located at /home/sakaki/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210 folder the 244210 folder was created and inside it will be the pfx/ folder
+<p>When you press play using Proton 5.0 even if the game doesn't open, or crashes, it created a VERY important prefix in the compatdata folder in the Steam folder, usually located at /home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210 folder the 244210 folder was created and inside it will be the pfx/ folder
 you will need to use the WINEPREFIX command to set this 244210/pfx folder so that we can install the game's dependencies</p>
 
 > [!NOTE]
@@ -15,7 +15,6 @@ you will need to use the WINEPREFIX command to set this 244210/pfx folder so tha
 `$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks d3dcompiler_47`<br>
 `$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks vcrun2015`<br>
 `$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks dxvk`<br>
-<br>
 `$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winecfg`
 - <p>With this command you will open winecfg, I recommend changing the "windows version" to: Windows 10, then you click on the libraries tab, type dwrite and then click on add and then click on apply.</p>
 
@@ -26,11 +25,12 @@ Once downloaded, run the next command:
 Once a window pops up, click on `install` and then select the wine-mono-XX-X-X-x86.msi file that was downloaded.  
 
 you also need to install proton ge support via flatpak using: `flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE`
-After that install the latest version of [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), and put it to run on steam as the main Proton.
+After that  
+install the latest version of [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), and put it to run on steam as the main Proton.
 <br>
 > [!IMPORTANT]
 > **See also:**
-> - [Modding](modding)
-> - [Online](online)
+> - [Modding](modding.md)
+> - [Online](online.md)
 > - [Collaborators](thanks-to-collaborators.md)
 > - [Configuration Used](.)
