@@ -1,7 +1,7 @@
 # distros like lmde need third party configurations in addition to the script
 rm -rf ~/.cache/winetricks
 clear
-echo "Select your game prefix (e.g: /home/sakaki/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx)"
+echo "Select your game prefix (e.g: /home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx)"
 read -p "> " gamePrefix
 clear
 rm -rf "$gamePrefix"
