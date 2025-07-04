@@ -12,12 +12,12 @@ you will need to use the WINEPREFIX command to set this 244210/pfx folder so tha
 
 > [!NOTE]
 > If your game is on another disk or directory the path changes, e.g.: mine is on another disk in the location: `/run/media/user/mydisk/SteamLibrary/steamapps/compatdata/244210/pfx`, in this case you should replace the directory to that in the other disk.</p>
-
-`$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks dotnet48`<br>
-`$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks d3dcompiler_47`<br>
-`$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks vcrun2015`<br>
-`$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks dxvk`<br>
-`$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winecfg`
+>
+> `$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks dotnet48`<br>
+> `$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks d3dcompiler_47`<br>
+> `$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks vcrun2015`<br>
+> `$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks dxvk`<br>
+> `$ WINEPREFIX=/home/user/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winecfg`
 - <p>With this command you will open winecfg, I recommend changing the "windows version" to: Windows 10, then you click on the libraries tab, type dwrite and then click on add and then click on apply.</p>
 
 If necessary, install Wine Mono manually, but usually Wine installs it by itself.  
