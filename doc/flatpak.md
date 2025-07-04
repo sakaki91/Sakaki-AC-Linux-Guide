@@ -32,7 +32,7 @@ install the latest version of [Proton GE](https://github.com/GloriousEggroll/pro
 <br>
 > [!IMPORTANT]
 > **See also:**
-> - [Modding](modding.md)
-> - [Online](online.md)
+> - [Modding](../README.md#modding)
+> - [Online](../README.md#online)
 > - [Collaborators](thanks-to-collaborators.md)
 > - [Configuration Used](.)
