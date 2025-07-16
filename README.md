@@ -1,4 +1,4 @@
-# Assetto Corsa Linux Guide - In development 0.5-1! [unStable!] 🌠 
+# Assetto Corsa Linux Guide - In development 0.5-2! [unStable!] 🌠 
 Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 
 > [!WARNING]
