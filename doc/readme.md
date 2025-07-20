@@ -1,6 +1,6 @@
 ### Used and tested distributions
 - Used and tested distributions:
-  - [Arch Linux](Arch-Linux-x86-64): (Stable and functional!) ✅  
+  - [Arch Linux](Arch-Linux-x86_64): (Stable and functional!) ✅  
   - Linux Mint: (Stable and functional!) ✅ (Thanks to [**@pezfisk**](https://github.com/pezfisk) for testing!)  
   - LMDE 6 faye: (Unstable, functional and experimental!) ⚠️  
   - Fedora 42: (Stable and functional!) ✅
