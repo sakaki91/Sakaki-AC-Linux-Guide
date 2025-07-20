@@ -1,10 +1,12 @@
 ### Used and tested distributions
 - Used and tested distributions:
-  - [Arch Linux](Arch-Linux-x86_64): (Stable and functional!) ✅  
-  - Linux Mint: (Stable and functional!) ✅ (Thanks to [**@pezfisk**](https://github.com/pezfisk) for testing!)  
-  - LMDE 6 faye: (Unstable, functional and experimental!) ⚠️  
-  - Fedora 42: (Stable and functional!) ✅
-  - Debian Trixie: (Stable and functional!) ✅
+  - [Stable]: ✅
+    - Arch Linux: (Stable and functional!) ✅  
+    - Linux Mint: (Stable and functional!) ✅ (Thanks to [**@pezfisk**](https://github.com/pezfisk) for testing!)   
+    - Fedora 42: (Stable and functional!) ✅
+    - Debian Trixie: (Stable and functional!) ✅
+  - [Unstable]: ⚠️
+    - LMDE 6 faye: (Unstable, functional and experimental!) ⚠️ 
 > [!IMPORTANT]
 > Several distributions are being tested, evaluated and adapted, please be patient, we are working hard to create a bridge from Assetto Corsa to Linux
 
@@ -16,7 +18,7 @@
   - Shell: bash 5.2.37  
   - DE: GNOME 48.3  
   - WM: Mutter (Wayland)  
-  - CPU: Intel(R) Core(TM) i5-4590  
+  - CPU: Intel i5-4590  
   - GPU: AMD Radeon RX 550  
   - Memory: 15.56 GiB  
 
