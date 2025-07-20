@@ -1,11 +1,10 @@
-# Assetto Corsa Linux Guide - In development 0.5-2! [unStable!] 🌠 
+# Assetto Corsa Linux Guide - In development 0.6! [Stable!] 🌠 
 Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 
 > [!WARNING]
-> the GE-Proton10-9 version has certain instabilities in the modded game, I recommend using the 10-8.
+> the GE-Proton10-9/10 version has certain instabilities in the modded game, I recommend using the 10-8.
 > <p>Several distributions are being tested, evaluated and adapted, please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.</p>
-> <p>The guide is only stable for Arch Linux and derivatives and Linux Mint (Tested on 20/06/2025), I am currently exploring LMDE and it is working but it is still
-> experimental, I will look for stability and then I will try to adapt it to Fedora with wine-staging.</p>
+> <p>The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!</p>
 
 - [Installation](#installation)
   - [Manual - Recommended! 🌠](doc/native.md)
