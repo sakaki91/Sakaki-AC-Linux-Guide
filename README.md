@@ -90,7 +90,9 @@ If you use Proton GE, you need to add support via flatpak using:
  
 ## Modding
 
-<p>Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the [Content Manager](https://assettocorsa.club/content-manager.html) and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*. Download the [CSP fonts](https://acstuff.club/u/blob/ac-fonts.zip) and extract them to assettocorsa/content/fonts/. Then, launch the game via Steam.</p>
+<p>Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the Content Manager: https://assettocorsa.club/content-manager.html, and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*.  
+	
+Download the CSP fonts: https://acstuff.club/u/blob/ac-fonts.zip, and extract them to assettocorsa/content/fonts/. Then, launch the game via Steam.</p>
 <p>The Content Manager will then open. You can configure and modify it as you wish. I recommend using version 0.2.0 of the Custom Shaders Patch. Avoid very new or very old versions!</p>
 
 ## Online
