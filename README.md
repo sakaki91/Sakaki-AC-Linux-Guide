@@ -1,4 +1,4 @@
-# Assetto Corsa Linux Guide - In development 0.7! [Stable!] 🌠 
+# Assetto Corsa Linux Guide - In development 0.7-1! [Stable!] 🌠 
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux<br>
 
 > [!WARNING]
@@ -7,6 +7,8 @@ Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager
 > because I'm a bit paranoid about scripts and I wouldn't want other people to feel that way.  
 > please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.</p>
 > <p>The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!</p>
+
+__Dependencies: wine, winetricks, steam (or steam via flatpak).__
 
 - [Installation](#installation)
   - [Native](#native)
