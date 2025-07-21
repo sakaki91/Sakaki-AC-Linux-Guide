@@ -1,16 +1,16 @@
-# Assetto Corsa Linux Guide - In development 0.6! [Stable!] 🌠 
-Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
+# Assetto Corsa Linux Guide - In development 0.7! [Stable!] 🌠 
+Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux<br>
 
 > [!WARNING]
-> the GE-Proton10-9/10 version has certain instabilities in the modded game, I recommend using the 10-8.
-> <p>Several distributions are being tested, evaluated and adapted, please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.</p>
+> <p>Some recent ProtonGE versions are showing instabilities with the game, I recommend using GE10-8.</p>  
+> <p>recently the script installation was removed
+> because I'm a bit paranoid about scripts and I wouldn't want other people to feel that way.  
+> please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.</p>
 > <p>The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!</p>
 
 - [Installation](#installation)
-  - [Manual - Recommended! 🌠](doc/native.md)
-  - [Flatpak](doc/flatpak.md)
-  - [Script/Native](#native-script)
-  - [Script/Flatpak](#flatpak-script)
+  - [Native](#native)
+  - [Flatpak](#flatpak)
 - [Modding](#modding)
 - [Online](#online)
 - [Configuration Used](doc)
@@ -18,36 +18,80 @@ Sakaki guide to running Assetto Corsa with Mods (CSP) + CM on Linux<br>
 
 > [!IMPORTANT]
 > <p>If you have already tried to run the game on Linux, I strongly recommend that you delete the game prefix (usually in ~/.steam/steam/steamapps/> compatdata/244210/)
-> You also must delete the winetricks cache with `$ rm -rf ~/.cache/winetricks` (if you have never used it, you do not need to delete it), and from there you can > follow the tutorial below.</p>
-> <p>It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running!</p>
 
 ## Installation
-> ### Native Script
-> `$ git clone https://github.com/vitorserveja/Sakaki-AC-Linux-Guide/`<br>
-> `$ cd Sakaki-AC-Linux-Guide/`<br>
-> `$ sh generic-run.sh`<br>
-> and to install the Content Manager:  
-> `$ sh modding.sh`
+ ### Native
 
-### Flatpak Script
-> `$ git clone https://github.com/vitorserveja/Sakaki-AC-Linux-Guide/`<br>
-> `$ cd Sakaki-AC-Linux-Guide/`<br>
-> `$ sh flatpak-run.sh`<br>
-> and to install the Content Manager:  
-> `$ sh modding.sh`
-> 
->you also need to install proton ge support via flatpak using: `flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE`
->After that install the latest version of [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), and put it to run on steam as the main Proton.  
+start the game using Proton 5.0-10 and let it run until it crashes silently, as proton switching is necessary!
 
+In this guide we will use the following directory as an example, you must adapt it if yours is different or if your game is on another disk!
+
+`~/.steam/steam/steamapps/compatdata/244210/pfx`
+
+It is recommended to use this command to clean any corrupted winetricks packages in the cache:
+
+	rm -rf ~/.cache/winetricks
+
+the winetricks annihilate below will clean up the prefix and delete any loose dependencies:
+
+	WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks annihilate
+
+then we will install the game dependencies below:
+
+	WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks dotnet48
+
+	WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks vcrun2015
+	
+	WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks d3dcompiler_47
+	
+	WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks dxvk
+	
+now enter winecfg, and add it as Windows 10, and in libraries add dwrite.dll to be able to use the CSP in Content Manager
+
+	WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winecfg
+
+<p>Now you can open the game again with any proton you want! (I recommend protonGE10-8 or Hotflix/Exp</p>
+<p>It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running!</p>
+
+ ### Flatpak
+ 
+start the game using Proton 5.0-10 and let it run until it crashes silently, as proton switching is necessary!
+
+In this guide we will use the following directory as an example, you must adapt it if yours is different or if your game is on another disk!
+
+`~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx`
+
+It is recommended to use this command to clean any corrupted winetricks packages in the cache:
+
+	rm -rf ~/.cache/winetricks
+
+the winetricks annihilate below will clean up the prefix and delete any loose dependencies:
+
+	WINEPREFIX=~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks annihilate
+
+then we will install the game dependencies below:
+
+	WINEPREFIX=~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks dotnet48
+
+	WINEPREFIX=~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks vcrun2015
+	
+	WINEPREFIX=~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks d3dcompiler_47
+	
+	WINEPREFIX=~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winetricks dxvk
+now enter winecfg, and add it as Windows 10, and in libraries add dwrite.dll to be able to use the CSP in Content Manager
+	
+	WINEPREFIX=~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx winecfg
+	
+If you use Proton GE, you need to add support via flatpak using:
+
+	flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+<p>Now you can open the game again with any proton you want! (I recommend protonGE10-8 or Hotflix/Exp</p>
+<p>It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running!</p>
+ 
 ## Modding
 
-<p>
-
-  Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsaBackup.exe*
-then download the [Content Manager](https://assettocorsa.club/content-manager.html) and extract it to the main Assetto Corsa folder, and rename *Content Manager.exe* to *AssettoCorsa.exe* and open the game via Steam.</p>
-<p>then the Content Manager will open, you can configure and modify as you wish, I recommend using version 0.2.0 of the Custom Shaders Patch, avoid very new or very old versions!</p>
-or run the modding.sh script and it automates everything, it just asks for the game directory
-<br><br>
+<p>Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the [Content Manager](https://assettocorsa.club/content-manager.html) and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*. Download the [CSP fonts](https://acstuff.club/u/blob/ac-fonts.zip) and extract them to assettocorsa/content/fonts/. Then, launch the game via Steam.</p>
+<p>The Content Manager will then open. You can configure and modify it as you wish. I recommend using version 0.2.0 of the Custom Shaders Patch. Avoid very new or very old versions!</p>
 
 ## Online
 
