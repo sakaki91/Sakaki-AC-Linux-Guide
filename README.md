@@ -17,7 +17,7 @@ Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager
 - [Collaborators](doc/thanks-to-collaborators.md)
 
 > [!IMPORTANT]
-> <p>If you have already tried to run the game on Linux, I strongly recommend that you delete the game prefix (usually in ~/.steam/steam/steamapps/> compatdata/244210/)
+> <p>If you have already tried to run the game on Linux, I strongly recommend that you delete the game prefix (usually in ~/.steam/steam/steamapps/compatdata/244210/)
 
 ## Installation
  ### Native
