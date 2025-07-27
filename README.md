@@ -2,7 +2,7 @@
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux<br>
 
 > [!WARNING]
-> <p>Some recent ProtonGE versions are showing instabilities with the game, I recommend using GE10-8.</p>  
+> <p>Some recent ProtonGE (10-10/10-9) versions are showing instabilities with the game, I recommend using GE10-8.</p>  
 > <p>recently the script installation was removed
 > because I'm a bit paranoid about scripts and I wouldn't want other people to feel that way.  
 > please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.</p>
