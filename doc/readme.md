@@ -13,7 +13,7 @@
 ### Tested configurations:  
 
 
-- __OS: Fedora Linux 42 (Workstation Edition) x86_64__ | [stable✅], *steam.rpm*.  
+- __Fedora Linux 42 (Workstation Edition) x86_64__ | [stable✅], *steam.rpm*.  
   - Kernel: Linux 6.15.6-200.fc42.x86_64  
   - Shell: bash 5.2.37  
   - DE: GNOME 48.3  
