@@ -1,14 +1,14 @@
-# Assetto Corsa Linux Guide - In development 0.7-1! [Stable!] 🌠 
+# Assetto Corsa Linux Guide - [Possibly Archived] 🌠 
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux<br>
 
-> [!WARNING]
-> <p>Some recent GE-Proton (10-10/10-9) versions are showing instabilities with the game, The GE-Proton10-11 has been tested and works smoothly!</p>  
-> <p>recently the script installation was removed
-> because I'm a bit paranoid about scripts and I wouldn't want other people to feel that way.  
-> please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.</p>
-> <p>The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!</p>
+*Try also [Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/).*
 
-__Dependencies: wine, winetricks, steam (or steam via flatpak).__
+> [!WARNING]
+> Some recent GE-Proton versions are showing instabilities with the game, I recommend using Proton Experimental or Proton 10<br>  
+> The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!<br>
+> please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.
+
+__Dependencies: wine (.exe deps: dotnet48, dxvk, d3dcompiler_47 and vcrun2015), winetricks, steam.__
 
 - [Installation](#installation)
   - [Native](#native)
@@ -52,7 +52,7 @@ now enter winecfg, and add it as Windows 10, and in libraries add dwrite.dll to 
 
 	WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winecfg
 
-<p>Now you can open the game again with any proton you want! (I recommend protonGE10-8 or Hotflix/Exp</p>
+<p>Now you can open the game again with any proton you want! (I recommend Proton Experimental or Proton 10/Exp</p>
 <p>It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running!</p>
 
  ### Flatpak
@@ -87,15 +87,15 @@ now enter winecfg, and add it as Windows 10, and in libraries add dwrite.dll to 
 If you use Proton GE, you need to add support via flatpak using:
 
 	flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE
-<p>Now you can open the game again with any proton you want! (I recommend protonGE10-8 or Hotflix/Exp</p>
+<p>Now you can open the game again with any proton you want! (I recommend Proton Experimental or Proton 10/Exp</p>
 <p>It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running!</p>
  
 ## Modding
 
-<p>Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the Content Manager: https://assettocorsa.club/content-manager.html, and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*.  
+Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the [Content Manager](https://assettocorsa.club/content-manager.html), and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*.  
 	
-Download the CSP fonts: https://acstuff.club/u/blob/ac-fonts.zip, and extract them to assettocorsa/content/fonts/. Then, launch the game via Steam.</p>
-<p>The Content Manager will then open. You can configure and modify it as you wish. I recommend using version 0.2.0 of the Custom Shaders Patch. Avoid very new or very old versions!</p>
+Download the [CSP fonts](https://acstuff.club/u/blob/ac-fonts.zip), and extract them to assettocorsa/content/fonts/. Then, launch the game via Steam, the Content Manager will then open.  
+You can configure and modify it as you wish. I recommend using version 0.2.0 of the Custom Shaders Patch. Avoid very new or very old versions!
 
 ## Online
 
