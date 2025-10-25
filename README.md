@@ -1,14 +1,13 @@
 # Assetto Corsa Linux Guide - [Working Harder!] 🌠 
-Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux<br>
-
-*Try also [Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/).*
+Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux.<br>
+*Try also [Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/).*<br>
 
 > [!WARNING]
 > Some recent GE-Proton versions are showing instabilities with the game, I recommend using Proton Experimental or Proton 10<br>  
 > The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!<br>
 > please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.
 
-__Dependencies: wine (.exe deps: dotnet48, dxvk, d3dcompiler_47 and vcrun2015), winetricks, steam.__
+__Dependencies: wine, winetricks, steam.__
 
 - [Installation](#installation)
   - [Native](#native)
