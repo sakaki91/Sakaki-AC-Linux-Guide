@@ -1,4 +1,4 @@
-# Assetto Corsa Linux Guide - [Possibly Archived] 🌠 
+# Assetto Corsa Linux Guide - [Working Harder!] 🌠 
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux<br>
 
 *Try also [Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/).*
