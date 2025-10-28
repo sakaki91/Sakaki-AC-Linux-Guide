@@ -2,7 +2,7 @@
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux.<br>
 *Try also [Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/).*<br>
 
-> [!WARNING]  
+> [!IMPORTANT]  
 > Some recent GE-Proton versions are showing instabilities with the game, I recommend using Proton Experimental or Proton 10<br>  
 > The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!<br>
 > please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.  
@@ -16,16 +16,13 @@ __Dependencies: `wine, winetricks, steam.`__
 - [Extras](#extras)
 - [Configuration Used](doc)
 - [Collaborators](doc/thanks-to-collaborators.md)
+	
+## Installation
 
-> [!IMPORTANT]
-> <p>Firstly, it is necessary and recommended to delete the current prefix (244210) (usually in ~/.steam/steam/steamapps/compatdata/244210/ #native or ~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/ #flatpak)
-
-__EXAMPLE:__
+Firstly, it is necessary and recommended to delete the current prefix (244210), __Example:__
 
 	rm -rf ~/.steam/steam/steamapps/compatdata/244210/ #native-steam
 	rm -rf ~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/ #flatpak-steam
-	
-## Installation
 
 It is recommended to use this command to clean any corrupted winetricks packages in the cache:
 
@@ -36,7 +33,7 @@ In this guide we will use the following directory as an example, you must adapt 
 For native:  
 `~/.steam/steam/steamapps/compatdata/244210/pfx`
 
-For flatpak:
+For flatpak:  
 `~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx`
 
 we will define the prefix (adapt if yours is in another location!) with:
