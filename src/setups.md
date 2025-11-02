@@ -6,7 +6,7 @@
     - Fedora 42: (Stable and functional!) ✅
     - Debian Trixie: (Stable and functional!) ✅
   - [Unstable]: 
-    - LMDE 6 faye: (Unstable, functional and experimental!) ⚠️ 
+    - LMDE 6 faye: (Unstable, functional and experimental!) ⚠️ (It showed instabilities most likely due to the older kernel).
 > [!IMPORTANT]
 > Several distributions are being tested, evaluated and adapted, please be patient, we are working hard to create a bridge from Assetto Corsa to Linux
 
