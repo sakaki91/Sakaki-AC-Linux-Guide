@@ -1,32 +1,28 @@
 # Assetto Corsa Linux Guide - 🌠 
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux.<br>
-*Try also __[Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/).__*<br>
+*Try also [Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/).*<br>
 
-> [!WARNING]  
+> [!IMPORTANT]  
 > Some recent GE-Proton versions are showing instabilities with the game, I recommend using Proton Experimental or Proton 10<br>  
 > The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!<br>
 > please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.  
-If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report them.
+If you encounter any [__problems__](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues), please report them.
 
 __Dependencies: `wine, winetricks, steam.`__
 
 - [Installation](#installation)
-	- [Script - (Coming Soon!)](#)
 - [Modding](#modding)
 - [Online](#online)
 - [Extras](#extras)
-- [Configuration Used](src)
-- [Collaborators](src/thanks-to-collaborators.md)
+- [Configuration Used](doc)
+- [Collaborators](doc/thanks-to-collaborators.md)
+	
+## Installation
 
-> [!IMPORTANT]
-> <p>Firstly, it is necessary and recommended to delete the current prefix (244210) (usually in ~/.steam/steam/steamapps/compatdata/244210/ #native or ~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/ #flatpak)
-
-__EXAMPLE:__
+Firstly, it is necessary and recommended to delete the current prefix (244210), __Example:__
 
 	rm -rf ~/.steam/steam/steamapps/compatdata/244210/ #native-steam
 	rm -rf ~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/ #flatpak-steam
-	
-## Installation
 
 It is recommended to use this command to clean any corrupted winetricks packages in the cache:
 
@@ -37,11 +33,14 @@ In this guide we will use the following directory as an example, you must adapt 
 For native:  
 `~/.steam/steam/steamapps/compatdata/244210/pfx`
 
-For flatpak:
+For flatpak:  
 `~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx`
 
-First, go to your library and:  
-`[Library > Collections > Assetto Corsa > Properties > Compatibility > Proton 5.0-10]`
+we will define the prefix (adapt if yours is in another location!) with:
+
+	export WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx
+
+This command is used to export and save the path in the __*WINEPREFIX*__ variable, so you don't need to repeat it several times.
 
 Proton switching is still necessary (I'm looking for solutions to not depend on switching), change to Proton 5.0-10 in game properties, and type below:  
 
@@ -51,12 +50,6 @@ __Native:__
 __Flatpak:__
 
 	flatpak run --command=steam com.valvesoftware.Steam steam://rungameid/244210 
-
-Now let's define the prefix (adapt it if yours is in a different location!) with:
-
-	export WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx
-
-This command is used to export and save the path in the __*WINEPREFIX*__ variable, so you don't need to repeat it several times.
 
 the game will crash silently without returning an error, after this happens use the following command to clean up any loose dependencies on the prefix:
 
@@ -72,19 +65,15 @@ then we will install the game dependencies below:
 	
 	winetricks dxvk
 	
-Next, we'll use the winecfg below to set the version to Windows 10, without needing to open the winecfg window:
-	
-	winecfg /v win10
+now enter winecfg, and add it as Windows 10, and in libraries add dwrite.dll to be able to use the CSP in Content Manager
 
-Next, we will inject the dwrite.dll file so that it's possible to use CSP in the Content Manager.
-
-	wine reg add "HKEY_CURRENT_USER\Software\Wine\DllOverrides" /v dwrite /d native,builtin /f
+	winecfg
 
 If you use Proton GE in Steam Flatpak, you need to add support via flatpak using:
 
 	flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 
-for subtle performance and latency improvements I recommend using __[kernel-zen](https://github.com/zen-kernel/zen-kernel)__ and the ntsync module __(OPTIONAL)__ : 
+for subtle performance and latency improvements I recommend using kernel-zen and the ntsync module __(OPTIONAL)__ : 
 
 	sudo modprobe ntsync
 
@@ -98,9 +87,9 @@ now you can play the way you want
  
 ## Modding
 
-Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the __[Content Manager](https://acstuff.ru/app/latest.zip)__, and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*.  
+Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the [Content Manager](https://assettocorsa.club/content-manager.html), and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*.  
 	
-Download the __[CSP fonts](https://acstuff.club/u/blob/ac-fonts.zip)__, and extract them to assettocorsa/content/fonts/. Then, launch the game via Steam, the Content Manager will then open.  
+Download the [CSP fonts](https://acstuff.club/u/blob/ac-fonts.zip), and extract them to assettocorsa/content/fonts/. Then, launch the game via Steam, the Content Manager will then open.  
 You can configure and modify it as you wish. I recommend using version 0.2.0 of the Custom Shaders Patch. Avoid very new or very old versions!
 
 ## Online
