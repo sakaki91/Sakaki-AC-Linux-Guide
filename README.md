@@ -11,19 +11,20 @@ If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Gu
 
 __Dependencies: `wine, winetricks, steam.`__
 - [Installation](#installation)
-- [Script - (Coming Soon!)](#)
+	- [Script - (Coming Soon!)](#)
 - [Modding](#modding)
 - [Online](#online)
 - [Extras](#extras)
-- [Configuration Used](src)
-- [Collaborators](src/thanks-to-collaborators.md)
+- [Configuration Used](src/)
+- [Collaborators](src/documentation/thanks-to-collaborators.md)
 
 > [!IMPORTANT]
 > <p>Firstly, it is necessary and recommended to delete the current prefix (244210) (usually in ~/.steam/steam/steamapps/compatdata/244210/ #native or ~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/ #flatpak)
 
 __EXAMPLE:__
-rm -rf ~/.steam/steam/steamapps/compatdata/244210/ #native-steam
-rm -rf ~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/ #flatpak-steam
+
+	rm -rf ~/.steam/steam/steamapps/compatdata/244210/ #native-steam
+	rm -rf ~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/ #flatpak-steam
 
 ## Installation
 It is recommended to use this command to clean any corrupted winetricks packages in the cache:
@@ -45,6 +46,7 @@ First, go to your library and:
 Proton switching is still necessary (I'm looking for solutions to not depend on switching), change to Proton 5.0-10 in game properties, and type below:
 
 __Native:__
+
 	steam steam://rungameid/244210
 
 __Flatpak:__
