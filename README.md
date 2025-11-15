@@ -11,7 +11,6 @@ If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Gu
 
 __Dependencies: `wine, winetricks, steam.`__
 - [Installation](#installation)
-	- [Script - (Coming Soon!)](#)
 - [Modding](#modding)
 - [Online](#online)
 - [Extras](#extras)
