@@ -9,4 +9,4 @@
   and the great help from the community on ProtonDB. Without them, I would be nothing.
   Many things have been tested multiple times using parts of the ProtonDB experiments.</p>
   <p>I am also very grateful to the contributors of this project and the users who opened issues,
-  for helping me better organize this project and for helping me make small fixes, among others that I am about to make, </p>
+  for helping me better organize this project and for helping me make small fixes, among others that I am about to make. </p>
