@@ -11,8 +11,8 @@ If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Gu
 
 - [Getting Started](#)
 	- [Dependencies](#dependencies)
-	- [Preparing Prefix](preparing-prefix)
-	- [Install](#install)
+	- [Preparing Prefix](#preparing-prefix)
+	- [Installation](#installation)
 	- [Modding](#modding)
 	- [Online](#online)
 	- [Extras](#extras)
