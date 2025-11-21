@@ -12,6 +12,14 @@
 
 ### Tested configurations:  
 
+- __Arch Linux x86_64__ | [stable✅], *steam official multilib repo*.
+  - Kernel: Linux 6.17.8-arch1-1
+  - DE: KDE Plasma 6.5.3
+  - WM: KWin (X11)
+  - CPU: Intel(R) Core(TM) i7-9700 (8) @ 4.70 GHz
+  - GPU 1: NVIDIA GeForce GTX 970 [Discrete]
+  - GPU 2: Intel UHD Graphics 630 @ 1.20 GHz [Integrated]
+  - Memory: 15.51 GiB
 
 - __Fedora Linux 42 (Workstation Edition) x86_64__ | [stable✅], *steam.rpm*.  
   - Kernel: Linux 6.15.6-200.fc42.x86_64  
