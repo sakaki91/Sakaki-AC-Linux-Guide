@@ -17,7 +17,7 @@
   - DE: KDE Plasma 6.5.3
   - WM: KWin (X11)
   - CPU: Intel(R) Core(TM) i7-9700 (8) @ 4.70 GHz
-  - GPU 1: NVIDIA GeForce GTX 970 [Discrete]
+  - GPU 1: NVIDIA GeForce GTX 970 [Discrete] (Driver 580 w/X11)
   - GPU 2: Intel UHD Graphics 630 @ 1.20 GHz [Integrated]
   - Memory: 15.51 GiB
 
