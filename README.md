@@ -9,7 +9,7 @@ thanks to all the reports with this specific version on ProtonDB!<br>
 > The guide has been tested on several popular distros and has had the same results on most of them.  
 If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report them.<br>  
 > Yes, I know it's not the cleanest way to do it, but I'm trying VERY hard to optimize this whole mess.  
-> Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault; I'm just TRYING to help in any way I can :)  
+> Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can :)  
 
 - [Getting Started](#)
 	- [Dependencies](#dependencies)
