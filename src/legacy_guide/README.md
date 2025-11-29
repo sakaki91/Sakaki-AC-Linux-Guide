@@ -1,28 +1,23 @@
  # Assetto Corsa Linux Guide - 🌠
 
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online + Content Manager on Linux.<br>
-*Try also __[Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/), and [ProtonDB](https://www.protondb.com/app/244210)__.*<br>
+*Try also __[Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/).__*<br>
 
 > [!WARNING]
-> Some recent GE-Proton versions are showing instabilities with the game, In this guide, I use and recommend version [GE-Proton9-20](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-20).  
-thanks to all the reports with this specific version on ProtonDB!<br>  
-> The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!  
-If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report them.<br>  
-> Yes, I know it's not the cleanest way to do it, but I'm trying VERY hard to optimize this whole mess.  
-> Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault; I'm just TRYING to help in any way I can :)  
+> Some recent GE-Proton versions are showing instabilities with the game, I recommend using Proton Experimental or Proton 10<br>
+> The guide has been tested on several popular distros and has had the same results on most of them, I would say it is stable enough!<br>
+> please be patient, we are working hard to create a bridge from Assetto Corsa to Linux.
+If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report them.
 
 - [Getting Started](#)
 	- [Dependencies](#dependencies)
 	- [Preparing Prefix](#preparing-prefix)
-	- [Installation](#new-guide)
-		- [New-Guide (Recommended)](#new-guide)
-			- [[NG] - Script Installation (Coming Soon!)](#script-installation)
-		- [Legacy-Guide](src/legacy_guide/README.md)
+	- [Installation](#installation)
 	- [Modding](#modding)
 	- [Online](#online)
 	- [Extras](#extras)
-		- [Configuration Used](src/)
-		- [Collaborators](src/documentation/thanks-to-collaborators.md)
+		- [Configuration Used](../)
+		- [Collaborators](../documentation/thanks-to-collaborators.md)
 
 ## Dependencies
 
@@ -64,56 +59,49 @@ And if you've already tried installing the game and its dependencies using winet
 	
 	$ rm -rf ~/.cache/winetricks
 
-Now, after deleting your game prefix, we will recreate it manually, yes... that's right.  
+## Installation
+First, go to your library and do:  
+`[Library > Collections > Assetto Corsa > Properties > Compatibility > Proton 5.0-10]`
 
-Using the following commands:  
-	
-	$ mkdir -p ~/.steam/steam/steamapps/compatdata/244210/pfx
-
-After creating the folders, we will store their path in the *__WINEPREFIX__* variable.  
-
-	$ export WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx
-
-And now:  
-
-	$ wineboot
-
-With this, we created the basic structure of the "*Wine* directory and registry system".  
-
-## New Guide
-
-After following the instructions above and preparing the prefix, we will install the dependencies and work around some DLL overlapping issues that Proton itself causes:
-
-	$ winetricks dotnet48
-
-	$ winetricks vcrun2019
-
-	$ winetricks d3dcompiler_47
-
-And now we will select the prefix version for Windows 10:
-
-	$ winecfg /v win10
-
-And lastly, we will inject the dwrite.dll so we can use CSP:
-
-	$ wine reg add "HKEY_CURRENT_USER\Software\Wine\DllOverrides" /v dwrite /d native,builtin /f
-
-and now we will run:
+Proton switching is still necessary (I'm looking for solutions to not depend on switching), change to Proton 5.0-10 in game properties, and type below:
 
 	$ steam steam://rungameid/244210
 
-Or if you use Steam Flatpak:
+Or if you use Flatpak it would be:  
 
 	$ flatpak run --command=steam com.valvesoftware.Steam steam://rungameid/244210
 
-the game will crash silently without returning an error.  
-Or if it mysteriously opens, close it and type one last command:
+the game will crash silently without returning an error  
 
-	winetricks --force vcrun2015
+Now let's define the prefix (adapt it if yours is in a different location!) with:
 
-I've tested it several times, the installer usually doesn't open, but it returns a message in the terminal, and mysteriously the CSP starts working. I'm still investigating what exactly this could be.  
+	$ export WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx
 
-and if you use Proton GE in Steam Flatpak, you need to add support via flatpak using:
+This command is used to export and save the path in the __*WINEPREFIX*__ variable, so you don't need to repeat it several times.  
+
+after this happens use the following command to clean up any loose dependencies on the prefix:  
+
+	$ winetricks annihilate
+
+then we will install the game dependencies below:
+
+	$ winetricks dotnet48
+
+	$ winetricks vcrun2015
+
+	$ winetricks d3dcompiler_47
+
+	$ winetricks dxvk
+
+Next, we'll use the winecfg below to set the version to Windows 10, without needing to open the winecfg window:
+
+	$ winecfg /v win10
+
+Next, we will inject the dwrite.dll file so that it's possible to use CSP in the Content Manager.
+
+	$ wine reg add "HKEY_CURRENT_USER\Software\Wine\DllOverrides" /v dwrite /d native,builtin /f
+
+If you use Proton GE in Steam Flatpak, you need to add support via flatpak using:
 
 	$ flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 
@@ -121,7 +109,7 @@ now you can play the way you want
 
 for subtle performance and latency improvements I recommend using __[kernel-zen](https://github.com/zen-kernel/zen-kernel)__ and the ntsync module __(OPTIONAL)__ :
 
-	$ sudo modprobe ntsync
+	sudo modprobe ntsync
 
 <p>It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running, they are usually errors like:
 
