@@ -109,7 +109,7 @@ Or if you use Steam Flatpak:
 the game will crash silently without returning an error.  
 Or if it mysteriously opens, close it and type one last command:
 
-	winetricks --force vcrun2015
+	$ winetricks --force vcrun2015
 
 I've tested it several times, the installer usually doesn't open, but it returns a message in the terminal, and mysteriously the CSP starts working. I'm still investigating what exactly this could be.  
 
