@@ -20,7 +20,7 @@ It is common for the game or Content Manager to produce some errors when install
 
 __Initially, we will need these basic dependencies:__ `wine, winetricks, steam (or flatpak steam)`
 
-- [Getting Started](#getting-started)
+- [Getting Started](#)
 	- [Preparing Prefix](#preparing-prefix)
 		- [Native](#native)
 		- [Flatpak](#flatpak)
