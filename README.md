@@ -169,7 +169,7 @@ If you encounter any undocumented issues, I invite you to open an [issue](https:
 
 Known issues:
 - [[rundll32.exe]: This application could not be started.](#rundll32.exe)  
-- [Game does not open even after "installing" the dependencies](#thegamedoesntopen)
+- [Game does not open even after "installing" the dependencies](#the-game-doesnt-open)
 
 ## rundll32.exe
 
@@ -177,11 +177,9 @@ generally the error [rundll32.exe] does not interfere with the game's functionin
 
 ## The game doesn't open
 
-If your game presents the following situation:
+If your game presents the following situation:  
+<img src="src/errors/error.gif" width="500">
 
-<p align="center">
-  <img src="src/errors/error.gif" width="500">
-</p>
 
 Know that it could be several things, but generally it tends to be a single reason, the main one being this:
 
