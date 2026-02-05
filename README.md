@@ -6,7 +6,7 @@ Sakaki guide to running Assetto Corsa with Mods (CSP) + Online/LAN + Content Man
 ## Getting Started
 
 > [!WARNING]
-> Some recent GE-Proton versions are showing instabilities with the game, In this guide, I use and recommend version [GE-Proton9-20](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-20).  
+> Some recent GE-Proton versions are showing instabilities with the game, In this guide, I use and recommend version [GE-Proton9-20](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-20), I and the community as a whole recommend this specific version of GE-Proton because it is one of the only ones that opens the game almost without problems after following the step by step below, you can use other versions such as the original Proton or GE-Proton Latest, but I STRONGLY RECOMMEND following the guide with version 9-20 and then changing the version if you want.  
 thanks to all the reports with this specific version on ProtonDB!    
 > The guide has been tested on several popular distros and has had the same results on most of them.  
 If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report them.  
