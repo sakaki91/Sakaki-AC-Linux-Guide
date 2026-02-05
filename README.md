@@ -1,10 +1,7 @@
- # Assetto Corsa Linux Guide - 🌠
+ # Assetto Corsa Linux Guide!
 
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online/LAN + Content Manager on Linux.  
 *Try also __[Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/), and [ProtonDB](https://www.protondb.com/app/244210)__.*  
-
-> [!IMPORTANT]
-> I'm finally "letting go," I see no reason to continue with this guide... I just updated it one last time and that's it...
 
 ## Getting Started
 
@@ -28,6 +25,7 @@ __Initially, we will need these basic dependencies:__ `wine, winetricks, steam (
 		- [Game Dependencies](#dependencies)
 		- [Modding](#modding)
 		- [Online](#online)
+	- [Troubleshooting](#troubleshooting)
 	- [Extras](#extras)
 	- [Configuration Used](../)
 
@@ -108,6 +106,7 @@ This session is organized into 3 steps, which are:
 - [Modding](#modding)
 - [Online](#online)  
 It is EXTREMELY important that you go through ALL the steps.  
+and if you encounter problems (and yes this is more common than it seems) I highly recommend looking at [troubleshooting](#troubleshooting).  
 
 ### Game Dependencies
 
@@ -138,7 +137,7 @@ After that, [install](https://github.com/GloriousEggroll/proton-ge-custom)/switc
 Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the __[Content Manager](https://acstuff.ru/app/latest.zip)__, and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*.  
 Download the __[CSP fonts](https://acstuff.club/u/blob/ac-fonts.zip)__, and extract them to assettocorsa/content/fonts/.  
 Then, launch the game via Steam, the Content Manager will then open.  
-> [!WARNING]
+> [!CAUTION]
 > DO NOT CLICK TO CREATE A DESKTOP SHORTCUT IN THE INITIAL CONTENT MANAGER CONFIGURATION, AS IT WILL CRASH AND YOU WILL NEED TO DELETE EVERYTHING RELATED TO IT AND START OVER. Just configure it as you wish, but DO NOT click on "create desktop shortcut".  
 
 Now you can configure and modify it as you wish.  
@@ -163,9 +162,65 @@ __To enter, you can do the following__: click on the Favorites tab in the Conten
 
 now you can play the way you want.  
 
+## Troubleshooting
+
+In this tab, we will have the solution, or at least the mapping of known problems in Assetto Corsa running via Wine/Proton!  
+If you encounter any undocumented issues, I invite you to open an [issue](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues) so we can try to help!
+
+Known issues:
+- [[rundll32.exe]: This application could not be started.](#rundll32.exe)  
+- [Game does not open even after "installing" the dependencies](#thegamedoesntopen)
+
+## rundll32.exe
+
+generally the error [rundll32.exe] does not interfere with the game's functioning, the error usually happens, including to me, but it is not something that prevents the game from running, it is probably something missing or being misinterpreted by dotnet48, currently I am trying to map these types of problems to make the game more satisfactory for the community, and obviously for me too!
+
+## The game doesn't open
+
+If your game presents the following situation:
+
+<p align="center">
+  <img src="src/errors/error.gif" width="500">
+</p>
+
+Know that it could be several things, but generally it tends to be a single reason, the main one being this:
+
+	sakaki@192:~$ export WINEPREFIX=/run/media/sakaki/3bf7c1fb-526d-48ee-9f03-689962c860d2/Jogos/Steam/steamapps/compatdata/244210 (to set the game prefix (located in the steam folder at compatdata/244210/)
+	sakaki@192:~$ winetricks annihilate (to erase loose ends of the prefix)
+	Executing cd /usr/bin
+	------------------------------------------------------
+	warning: Você está utilizando o winetricks-20250102, a versão mais recente é winetricks-20260125!
+	------------------------------------------------------
+	------------------------------------------------------
+	warning: Você pode atualizar com o sistema de atualizações da sua distribuição, --self-update, ou manualmente.
+	------------------------------------------------------
+	------------------------------------------------------
+	warning: Você está usando um WINEPREFIX de 64-bit. Observe que muitos casos instalam apenas versões de pacotes de 32-bit. Se você encontrar problemas, teste novamente em um WINEPREFIX limpo de 32-bit antes de relatar um bug.
+	------------------------------------------------------
+	------------------------------------------------------
+	warning: You appear to be using Wine's new wow64 mode. Note that this is EXPERIMENTAL and not yet fully supported. If reporting an issue, be sure to mention this.
+	------------------------------------------------------
+	Using winetricks 20250102 - sha256sum: c5bfa1741cb6671f1cf3328548a4e878ddf89f7c4f871519ef1037e78c7633d4 with wine-11.0 (Staging) and WINEARCH=win64
+	------------------------------------------------------
+	Delete /home/user/.wine/, These apps, icons and menu items  
+	------------------------------------------------------
+	Press Y or N, then Enter: 
+
+can you understand? that even using export WINEPREFIX, for some reason winetricks was unable to pull the variable, I really have no idea what it could be, but I managed to get around it in a simple way, I had this problem EXCLUSIVELY in Fedora Workstation only, but you may be having it, in this case you would just need to set the prefix in all dependency installation lines, for example:  
+
+	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks annihilate  
+	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx wine msiexec /i ~/Downloads/wine-mono-9.0.0-x86.msi  
+	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks dotnet48  
+	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks vcrun2015  
+	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks d3dcompiler_47  
+	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winecfg /v win10  
+	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx wine reg add "HKEY_CURRENT_USER\Software\Wine\DllOverrides" /v dwrite /d native,builtin /f
+
+In this way, the installation and configuration of dependencies was carried out in a very summarized way, WINEPREFIX was included in ALL lines, forcing winetricks to read the variable, this way the game opened normally, and of course... if you use Steam via Flatpak or on another disk like in my case... you would need to adapt the prefix paths, of course... I added the manual installation with the wine-mono .msi binary to the list too, but if your distro packages mono like Fedora/Arch... you don't need to install it, if you need it you can download it from [wine-mono](https://github.com/wine-mono/wine-mono/releases)!
+
 ## Extras
 
-Maybe I've given up on this guide, or maybe not, it will all depend on my mood soon, but one thing is certain, I will never charge anyone for what I do, everyone deserves free knowledge, even though it didn't generate any return for me and in the end caused more problems than advantages, I will archive this guide as a way to preserve history and to show in the future that Assetto Corsa was once an indomitable lion on Linux. I know it's very cliché and seems like a farewell, and it is.  
-Thank you to everyone who contributed and opened issues, thank you to everyone at ProtonDB and Reddit for everything.
+I'm a little tired about all this, I'm trying to fix some problems little by little... slowly, but one thing is certain, I will never charge anyone for what I do, everyone deserves free knowledge, even if it didn't generate any return for me and in the end it caused more problems than benefits, this guide is more like a way of preserving history and showing in the future that Assetto Corsa was once an untamed lion in Linux.  
+Thanks to everyone who contributed and opened issues, thanks to everyone at ProtonDB and Reddit for everything.  
 
 #### LONG LIVE LINUX GAMING! 
