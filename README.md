@@ -3,19 +3,20 @@
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online/LAN + Content Manager on Linux.  
 *Try also __[Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/), and [ProtonDB](https://www.protondb.com/app/244210)__.*  
 
-## Getting Started
+### Getting Started
 
-> [!WARNING]
-> Some recent GE-Proton versions are showing instabilities with the game, In this guide, I use and recommend version [GE-Proton9-20](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-20), I and the community as a whole recommend this specific version of GE-Proton because it is one of the only ones that opens the game almost without problems after following the step by step below, you can use other versions such as the original Proton or GE-Proton Latest, but I STRONGLY RECOMMEND following the guide with version 9-20 and then changing the version if you want.  
-thanks to all the reports with this specific version on ProtonDB!    
-> The guide has been tested on several popular distros and has had the same results on most of them.  
-If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report them.  
-It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running, they are usually errors like:  
-`[rundll32.exe]: This application could not be started.`  
-> Yes, I know it's not the cleanest way to do it, but I'm trying VERY hard to optimize this whole mess.  
-> Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can :)  
+<p>
+
+In this guide, I use and recommend the [[GE-Proton9-20]](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-20) version (because it's the simplest version to get the game running), I and the community in general recommend this specific version of GE-Proton because it's one of the few that opens the game almost without problems.  
+
+</p>
+
+If you encounter any __[problem](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report it in __AS MUCH DETAIL AS POSSIBLE__.  
+
+Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.  
 
 __Initially, we will need these basic dependencies:__ `wine, winetricks, steam (or flatpak steam)`
+
 
 - [Getting Started](#)
 	- [Preparing Prefix](#preparing-prefix)
