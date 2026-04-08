@@ -23,26 +23,10 @@ __Initially, we will need these basic dependencies:__ `wine, winetricks, steam (
 	1.3. [Modding](#modding)  
     1.4. [Online](#online)  
 2. [Known issues](#known-issues)  
-3. [Configuration Used](../)  
 
 If you encounter any __[problem](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report it in __AS MUCH DETAIL AS POSSIBLE__.  
 
 Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.  
-
-__Initially, we will need these basic dependencies:__ `wine, winetricks, steam (or flatpak steam)`
-
-
-- [Getting Started](#)
-	- [Preparing Prefix](#preparing-prefix)
-		- [Native](#native)
-		- [Flatpak](#flatpak)
-	- [Installation](#installation)
-		- [Game Dependencies](#dependencies)
-		- [Modding](#modding)
-		- [Online](#online)
-	- [Troubleshooting](#troubleshooting)
-	- [Extras](#extras)
-	- [Configuration Used](../)
 
 ### Preparing Prefix
 
@@ -129,7 +113,7 @@ __To enter, you can do the following__: click on the Favorites tab in the Conten
 
 now you can play the way you want.  
 
-### Know Issues
+### Known Issues
 
 The guide has been tested on several popular distros and has had the same results on most of them.  
 
