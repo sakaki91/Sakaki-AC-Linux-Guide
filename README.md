@@ -1,4 +1,4 @@
- # Assetto Corsa Linux Guide!
+# Assetto Corsa Linux Guide!
 
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online/LAN + Content Manager on *Linux*.  
 *Try also __[Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/), and [ProtonDB](https://www.protondb.com/app/244210)__.*  
@@ -11,6 +11,7 @@ In this guide, I use and recommend the [[GE-Proton9-20]](https://github.com/Glor
 
 </p>
 
+<<<<<<< HEAD
 Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.  
 
 If you encounter any __[problem](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report it in __AS MUCH DETAIL AS POSSIBLE__.  
@@ -24,6 +25,26 @@ __Initially, we will need these basic dependencies:__ `wine, winetricks, steam (
     1.4. [Online](#online)  
 2. [Known issues](#known-issues)  
 3. [Configuration Used](../)  
+=======
+If you encounter any __[problem](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report it in __AS MUCH DETAIL AS POSSIBLE__.  
+
+Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.  
+
+__Initially, we will need these basic dependencies:__ `wine, winetricks, steam (or flatpak steam)`
+
+
+- [Getting Started](#)
+	- [Preparing Prefix](#preparing-prefix)
+		- [Native](#native)
+		- [Flatpak](#flatpak)
+	- [Installation](#installation)
+		- [Game Dependencies](#dependencies)
+		- [Modding](#modding)
+		- [Online](#online)
+	- [Troubleshooting](#troubleshooting)
+	- [Extras](#extras)
+	- [Configuration Used](../)
+>>>>>>> 3af8ed544580bb3b6c424468e909dbd9746e38fd
 
 ### Preparing Prefix
 
