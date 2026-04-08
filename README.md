@@ -11,7 +11,6 @@ In this guide, I use and recommend the [[GE-Proton9-20]](https://github.com/Glor
 
 </p>
 
-<<<<<<< HEAD
 Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.  
 
 If you encounter any __[problem](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report it in __AS MUCH DETAIL AS POSSIBLE__.  
