@@ -24,7 +24,7 @@ __Initially, we will need these basic dependencies:__ `wine, winetricks, steam (
     1.4. [Online](#online)  
 2. [Known issues](#known-issues)  
 3. [Configuration Used](../)  
-=======
+
 If you encounter any __[problem](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report it in __AS MUCH DETAIL AS POSSIBLE__.  
 
 Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.  
@@ -43,7 +43,6 @@ __Initially, we will need these basic dependencies:__ `wine, winetricks, steam (
 	- [Troubleshooting](#troubleshooting)
 	- [Extras](#extras)
 	- [Configuration Used](../)
->>>>>>> 3af8ed544580bb3b6c424468e909dbd9746e38fd
 
 ### Preparing Prefix
 
