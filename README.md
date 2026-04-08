@@ -1,41 +1,35 @@
  # Assetto Corsa Linux Guide!
 
-Sakaki guide to running Assetto Corsa with Mods (CSP) + Online/LAN + Content Manager on Linux.  
+Sakaki guide to running Assetto Corsa with Mods (CSP) + Online/LAN + Content Manager on *Linux*.  
 *Try also __[Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/), and [ProtonDB](https://www.protondb.com/app/244210)__.*  
 
-#### If you would like to support the development of the project:
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/sakaki91)  
+### Getting Started
 
-## Getting Started
+<p>
 
-> [!WARNING]
-> Some recent GE-Proton versions are showing instabilities with the game, In this guide, I use and recommend version [GE-Proton9-20](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-20), I and the community as a whole recommend this specific version of GE-Proton because it is one of the only ones that opens the game almost without problems after following the step by step below, you can use other versions such as the original Proton or GE-Proton Latest, but I STRONGLY RECOMMEND following the guide with version 9-20 and then changing the version if you want.  
-thanks to all the reports with this specific version on ProtonDB!    
-> The guide has been tested on several popular distros and has had the same results on most of them.  
-If you encounter any __[problems](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report them.  
-It is common for the game or Content Manager to produce some errors when installing dependencies or when trying to open them, but know that this is part of it, and does not prevent the game from running, they are usually errors like:  
-`[rundll32.exe]: This application could not be started.`  
-> Yes, I know it's not the cleanest way to do it, but I'm trying VERY hard to optimize this whole mess.  
-> Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can :)  
+In this guide, I use and recommend the [[GE-Proton9-20]](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-20) version (because it's the simplest version to get the game running), I and the community in general recommend this specific version of GE-Proton because it's one of the few that opens the game almost without problems.  
+
+</p>
+
+Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.  
+
+If you encounter any __[problem](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report it in __AS MUCH DETAIL AS POSSIBLE__.  
 
 __Initially, we will need these basic dependencies:__ `wine, winetricks, steam (or flatpak steam)`
 
-- [Getting Started](#)
-	- [Preparing Prefix](#preparing-prefix)
-		- [Native](#native)
-		- [Flatpak](#flatpak)
-	- [Installation](#installation)
-		- [Game Dependencies](#dependencies)
-		- [Modding](#modding)
-		- [Online](#online)
-	- [Troubleshooting](#troubleshooting)
-	- [Extras](#extras)
-	- [Configuration Used](../)
+1. [Getting Started](#getting-started)  
+	1.1. [Preparing Prefix](#preparing-prefix)  
+	1.2. [Game Dependencies](#game-dependencies)  
+	1.3. [Modding](#modding)  
+    1.4. [Online](#online)  
+2. [Known issues](#known-issues)  
+3. [Configuration Used](../)  
 
-## Preparing Prefix
+### Preparing Prefix
 
-### Native:
-In this guide, we will use the following directory as an example: `~/.steam/steam/steamapps/compatdata/244210/`  
+In this guide, we will use the following directory as an example: `~/.steam/steam/steamapps/compatdata/244210`  
+
+or this one (adjusting this if the directories are different): `~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210`   
 
 If you have a custom directory on a different disk/partition, the logic remains the same, it would look something like this: `[path]/SteamLibrary/steam/steamapps/compatdata/244210`  
 
@@ -47,79 +41,26 @@ And if you've already tried installing the game and its dependencies using winet
 	
 	$ rm -rf ~/.cache/winetricks
 
-Now select Proton 5.0-10 on Steam to "open the game," it will crash but will then reset the prefix.  
-`[Library > Collections > Assetto Corsa > Properties > Compatibility > Proton 5.0-10]`  
+Now we prove that the Steam is closed, as we will install the Proton-GE and prepare the prefix manually.
 
-Now run the command below to re-execute the game and recreate the "clean" prefix:  
+	$ wget -c https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton9-20/GE-Proton9-20.tar.gz
 
-	$ steam steam://rungameid/244210
+Now extract it to the Steam (__Runners folder__):
+
+	$ tar -xvf GE-Proton9-20.tar.gz --directory ~/.steam/steam/compatibilitytools.d
 
 After that, we will include the game prefix path in the *WINEPREFIX* variable with:  
 
 	$ export WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx
 
-and run:  
-
-	$ winetricks annihilate
-
-This is so we can install dotnet48 without the "original" dotnet version of Proton interfering.  
-
-With that ready, you can proceed to [Installation](#installation)  
-
-### Flatpak:
-In this guide, we will use the following directory as an example: `~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210`  
-
-If you have a custom directory on a different disk/partition, the logic remains the same, it would look something like this: `[path]/SteamLibrary/steam/steamapps/compatdata/244210`  
-
-After discovering the path to your prefix, it's necessary to delete the prefix so that we can perform a clean installation of the dependencies using the commands below:  
-	
-	$ sudo rm -rf ~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/
-
-And if you've already tried installing the game and its dependencies using winetricks, I recommend clearing the winetricks cache just to be safe:  
-	
-	$ rm -rf ~/.cache/winetricks
-
-Now select Proton 5.0-10 on Steam to "open the game," it will crash but will then reset the prefix.  
-`[Library > Collections > Assetto Corsa > Properties > Compatibility > Proton 5.0-10]`  
-
-Now run the command below to re-execute the game and recreate the "clean" prefix:  
-
-	$ flatpak run --command=steam com.valvesoftware.Steam steam://rungameid/244210
-
-After that, we will include the game prefix path in the *WINEPREFIX* variable with:  
-
-	$ export WINEPREFIX=~/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx
-
-and run:  
-
-	$ winetricks annihilate
-
-This is so we can install dotnet48 without the "original" dotnet version of Proton interfering.  
-
-If you use Proton GE in Steam Flatpak, you need to add support via flatpak using:  
-
-	$ flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE
-
-With that ready, you can proceed to [Installation](#installation)  
-
-## Installation
-
-This session is organized into 3 steps, which are:  
-- [Game Dependencies](#game-dependencies)
-- [Modding](#modding)
-- [Online](#online)  
-It is EXTREMELY important that you go through ALL the steps.  
-and if you encounter problems (and yes this is more common than it seems) I highly recommend looking at [troubleshooting](#troubleshooting).  
+With that ready, you can proceed to installation.  
 
 ### Game Dependencies
 
-Firstly, if your distro doesn't include wine-mono by default, you'll need it to [install](https://github.com/wine-mono/wine-mono/releases) .NET programs (Download the version equivalent to your version of Wine, preferably in .msi format.).  
+It is EXTREMELY important that you go through ALL the steps.  
+and if you encounter problems (and yes this is more common than it seems) I highly recommend looking at [[Know Issues]](#known-issues).  
 
-And install below after setting the prefix in the sections above:  
-
-	$ wine msiexec /i ~/Downloads/wine-mono-9.0.0-x86.msi
-
-then we will install the game dependencies below:  
+Then we will install the game dependencies below:  
 
 	$ winetricks dotnet48
 	$ winetricks vcrun2015
@@ -129,13 +70,17 @@ Next, we'll use the winecfg below to set the version to Windows 10:
 
 	$ winecfg /v win10
 
-Next, we will inject the dwrite.dll file so that it's possible to use CSP in the Content Manager.  
+Next, we'll insert the dwrite.dll file so that CSP can be used in the Content Manager, but we'll do it in the Steam arguments:
 
-	$ wine reg add "HKEY_CURRENT_USER\Software\Wine\DllOverrides" /v dwrite /d native,builtin /f
+	WINEDLLOVERRIDES="dwrite=n,b" %command%
 
-After that, [install](https://github.com/GloriousEggroll/proton-ge-custom)/switch to [GE-Proton9-20](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-20) on Steam.  
+__*e.g:*__
 
-## Modding
+<img src="src/examples/start-args.png" width="500">
+
+After that, switch to [GE-Proton9-20](https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton9-20) on Steam.  
+
+### Modding
 
 Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the __[Content Manager](https://acstuff.ru/app/latest.zip)__, and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*.  
 Download the __[CSP fonts](https://acstuff.club/u/blob/ac-fonts.zip)__, and extract them to assettocorsa/content/fonts/.  
@@ -146,7 +91,7 @@ Then, launch the game via Steam, the Content Manager will then open.
 Now you can configure and modify it as you wish.  
 I recommend using version 0.2.0 of the Custom Shaders Patch, Avoid very new or very old versions! (Both work but with some instability, but I believe that happens even in Windows.)  
 
-## Online
+### Online
 
 Online mode also works perfectly, both on public Kunos servers and on LAN servers, but requires some adjustments, if your system has a firewall active, you'll need to allow Assetto Corsa ports in your firewall, for example:  
 
@@ -165,7 +110,9 @@ __To enter, you can do the following__: click on the Favorites tab in the Conten
 
 now you can play the way you want.  
 
-## Troubleshooting
+### Know Issues
+
+The guide has been tested on several popular distros and has had the same results on most of them.  
 
 In this tab, we will have the solution, or at least the mapping of known problems in Assetto Corsa running via Wine/Proton!  
 If you encounter any undocumented issues, I invite you to open an [issue](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues) so we can try to help!
@@ -174,11 +121,11 @@ Known issues:
 - [[rundll32.exe]: This application could not be started.](#rundll32.exe)  
 - [Game does not open even after "installing" the dependencies](#the-game-doesnt-open)
 
-## rundll32.exe
+### rundll32.exe
 
 generally the error [rundll32.exe] does not interfere with the game's functioning, the error usually happens, including to me, but it is not something that prevents the game from running, it is probably something missing or being misinterpreted by dotnet48, currently I am trying to map these types of problems to make the game more satisfactory for the community, and obviously for me too!
 
-## The game doesn't open
+### The game doesn't open
 
 If your game presents the following situation:  
 <img src="src/errors/error.gif" width="500">
@@ -216,12 +163,3 @@ can you understand? that even using export WINEPREFIX, for some reason winetrick
 	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winetricks d3dcompiler_47  
 	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx winecfg /v win10  
 	$ WINEPREFIX=~/.steam/steam/steamapps/compatdata/244210/pfx wine reg add "HKEY_CURRENT_USER\Software\Wine\DllOverrides" /v dwrite /d native,builtin /f
-
-In this way, the installation and configuration of dependencies was carried out in a very summarized way, WINEPREFIX was included in ALL lines, forcing winetricks to read the variable, this way the game opened normally, and of course... if you use Steam via Flatpak or on another disk like in my case... you would need to adapt the prefix paths, of course... I added the manual installation with the wine-mono .msi binary to the list too, but if your distro packages mono like Fedora/Arch... you don't need to install it, if you need it you can download it from [wine-mono](https://github.com/wine-mono/wine-mono/releases)!
-
-## Extras
-
-I'm a little tired about all this, I'm trying to fix some problems little by little... slowly, but one thing is certain, I will never charge anyone for what I do, everyone deserves free knowledge, even if it didn't generate any return for me and in the end it caused more problems than benefits, this guide is more like a way of preserving history and showing in the future that Assetto Corsa was once an untamed lion in Linux.  
-Thanks to everyone who contributed and opened issues, thanks to everyone at ProtonDB and Reddit for everything.  
-
-#### LONG LIVE LINUX GAMING! 
