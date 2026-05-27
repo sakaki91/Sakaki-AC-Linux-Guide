@@ -6,6 +6,7 @@ Try also:
 	Sihawido Method: https://github.com/sihawido/assettocorsa-linux-setup/
 	ProtonDB: https://www.protondb.com/app/244210
 
+
 Getting Started:
 ----------------
 
@@ -13,6 +14,7 @@ Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved throug
 If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.
 
 Initially, we will need these basic dependencies: [ wine, winetricks, steam ].
+
 
 Preparing Prefix:
 -----------------
@@ -46,6 +48,7 @@ After that, we will include the game prefix path in the *WINEPREFIX* variable wi
 
 With that ready, you can proceed to installation.
 
+
 Game Dependencies:
 ------------------
 
@@ -68,6 +71,7 @@ Next, we'll insert the dwrite.dll file so that CSP can be used in the Content Ma
 
 	WINEDLLOVERRIDES="dwrite=n,b" %command%
 
+
 Modding:
 --------
 
@@ -85,6 +89,7 @@ Then, launch the game via Steam, the Content Manager will then open.
 
 Now you can configure and modify it as you wish.
 I recommend using version 0.2.0 of the Custom Shaders Patch, Avoid very new or very old versions (Both work but with some instability, but I believe that happens even in Windows).
+
 
 Online:
 -------
