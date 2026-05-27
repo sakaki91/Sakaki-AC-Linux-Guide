@@ -3,7 +3,7 @@
 Sakaki guide to running Assetto Corsa with Mods (CSP) + Online/LAN + Content Manager on *Linux*.  
 *Try also __[Sihawido Guide](https://github.com/sihawido/assettocorsa-linux-setup/), and [ProtonDB](https://www.protondb.com/app/244210)__.*  
 
-### Getting Started
+#### Getting Started
 Remember, Assetto Corsa on Linux is an anomaly, and stability is achieved through unorthodox steps. If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.  
 
 If you encounter any __[problem](https://github.com/sakaki91/Sakaki-AC-Linux-Guide/issues)__, please report it in __AS MUCH DETAIL AS POSSIBLE__.  
@@ -16,7 +16,7 @@ __Initially, we will need these basic dependencies:__ `wine, winetricks, steam (
 	1.3. [Modding](#modding)  
     1.4. [Online](#online)  
 
-### Preparing Prefix
+#### Preparing Prefix
 
 In this guide, we will use the following directory as an example:  
 
@@ -48,7 +48,7 @@ After that, we will include the game prefix path in the *WINEPREFIX* variable wi
 
 With that ready, you can proceed to installation.  
 
-### Game Dependencies
+#### Game Dependencies
 
 It is EXTREMELY important that you go through ALL the steps.  
 
@@ -70,7 +70,7 @@ Next, we'll insert the dwrite.dll file so that CSP can be used in the Content Ma
 
 	WINEDLLOVERRIDES="dwrite=n,b" %command%
 
-### Modding
+#### Modding
 
 Open the Assetto Corsa folder and rename *AssettoCorsa.exe* to *AssettoCorsa_original.exe*, Then download the __[Content Manager](https://acstuff.ru/app/latest.zip)__, and extract it to the main Assetto Corsa folder. Rename *Content Manager.exe* to *AssettoCorsa.exe*.  
 Download the __[CSP fonts](https://acstuff.club/u/blob/ac-fonts.zip)__, and extract them to assettocorsa/content/fonts/.  
@@ -81,7 +81,7 @@ Then, launch the game via Steam, the Content Manager will then open.
 Now you can configure and modify it as you wish.  
 I recommend using version 0.2.0 of the Custom Shaders Patch, Avoid very new or very old versions! (Both work but with some instability, but I believe that happens even in Windows.)  
 
-### Online
+#### Online
 
 Online mode also works perfectly, both on public Kunos servers and on LAN servers, but requires some adjustments, if your system has a firewall active, you'll need to allow Assetto Corsa ports in your firewall, for example:  
 
