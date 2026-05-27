@@ -16,6 +16,18 @@ If it doesn't work, it's NOT my fault, I'm just TRYING to help in any way I can.
 Initially, we will need these basic dependencies: [ wine, winetricks, steam ].
 
 
+Auto Install (Experimental):
+----------------------------
+
+First, run the game with GE-Proton9-20 (to create the prefix)
+
+	$ cd ~/
+	$ git clone https://github.com/sakaki91/Sakaki-AC-Linux-Guide
+	$ cd Sakaki-AC-Linux-Guide
+	$ chmod +x install.sh
+	$ ./install
+
+
 Preparing Prefix:
 -----------------
 
