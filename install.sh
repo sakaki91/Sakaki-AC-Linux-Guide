@@ -26,43 +26,41 @@ dependencyInstall(){
     wine reg add "HKEY_CURRENT_USER\Software\Wine\DllOverrides" /v dwrite /d native,builtin /f
 }
 
-while true; do
-    if [[ $1 == "--native" ]]; then
-        GAMEPATH="$HOME"/.local/share/Steam/steamapps/common/assettocorsa
-        GAMEPREFIX="$HOME"/.local/share/Steam/steamapps/compatdata/244210/pfx
-        dependencyInstall
-        modBaseDownload
-    elif [[ $1 == "--flatpak" ]]; then
-        GAMEPATH="$HOME"/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/common/assettocorsa
-        GAMEPREFIX="$HOME"/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx
-        dependencyInstall
-        modBaseDownload
-    elif [[ $1 == "--custom" ]]; then
-        GAMEPATH=$(zenity --file-selection --directory --title "Select the game folder.")
-        GAMEPREFIX=$(zenity --file-selection --directory --title "Select the game's prefix folder (244210/pfx only).")
-        clear
-        while true; do
-            printf "GAME PATH: $GAMEPATH\nGAME PREFIX: $GAMEPREFIX\n\n"
-            read -p "Do you want to use these directories? [Y/n] " customDirConfirmation
-            [[ -z $customDirConfirmation ]] && customDirConfirmation="y"
-            if [[ $customDirConfirmation == "Y" || $customDirConfirmation == "y" ]]; then
-                break
-            elif [[ $customDirConfirmation == "N" || $customDirConfirmation == "n" ]]; then
-                break 2
-            else
-                printf "ERROR: Invalid option\n"
-                sleep 2
-                clear
-            fi
-        done
-        dependencyInstall
-        modBaseDownload
-    else
-        cat .logo
-        printf "\nERROR: Invalid option\n\nExamples:\n\n"
-        printf "%-30s %0s\n" "./install --native" "Configures the locally installed game to be in the native Steam folder."
-        printf "%-30s %0s\n" "./install --flatpak" "Configures the locally installed game to be in the flatpak Steam folder."
-        printf "%-30s %0s\n\n" "./install --custom" "Configure the installed game to a different disk/partition."
-        exit
-    fi
-done
+if [[ $1 == "--native" ]]; then
+    GAMEPATH="$HOME"/.local/share/Steam/steamapps/common/assettocorsa
+    GAMEPREFIX="$HOME"/.local/share/Steam/steamapps/compatdata/244210/pfx
+    dependencyInstall
+    modBaseDownload
+elif [[ $1 == "--flatpak" ]]; then
+    GAMEPATH="$HOME"/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/common/assettocorsa
+    GAMEPREFIX="$HOME"/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/compatdata/244210/pfx
+    dependencyInstall
+    modBaseDownload
+elif [[ $1 == "--custom" ]]; then
+    GAMEPATH=$(zenity --file-selection --directory --title "Select the game folder.")
+    GAMEPREFIX=$(zenity --file-selection --directory --title "Select the game's prefix folder (244210/pfx only).")
+    clear
+    while true; do
+        printf "GAME PATH: $GAMEPATH\nGAME PREFIX: $GAMEPREFIX\n\n"
+        read -p "Do you want to use these directories? [Y/n] " customDirConfirmation
+        [[ -z $customDirConfirmation ]] && customDirConfirmation="y"
+        if [[ $customDirConfirmation == "Y" || $customDirConfirmation == "y" ]]; then
+            break
+        elif [[ $customDirConfirmation == "N" || $customDirConfirmation == "n" ]]; then
+            break 2
+        else
+            printf "ERROR: Invalid option\n"
+            sleep 2
+            clear
+        fi
+    done
+    dependencyInstall
+    modBaseDownload
+else
+    cat .logo
+    printf "\nERROR: Invalid option\n\nExamples:\n\n"
+    printf "%-30s %0s\n" "./install --native" "Configures the locally installed game to be in the native Steam folder."
+    printf "%-30s %0s\n" "./install --flatpak" "Configures the locally installed game to be in the flatpak Steam folder."
+    printf "%-30s %0s\n\n" "./install --custom" "Configure the installed game to a different disk/partition."
+	exit
+fi
