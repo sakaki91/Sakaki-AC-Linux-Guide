@@ -25,7 +25,7 @@ dependencyInstall(){
     winecfg /v win10
     wine reg add "HKEY_CURRENT_USER\Software\Wine\DllOverrides" /v dwrite /d native,builtin /f
 }
-modBaseDownload
+
 while true; do
     if [[ $1 == "--native" ]]; then
         GAMEPATH="$HOME"/.local/share/Steam/steamapps/common/assettocorsa
