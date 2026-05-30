@@ -97,7 +97,7 @@ and extract them to assettocorsa/content/fonts/.
 Then, launch the game via Steam, the Content Manager will then open.
 
 !!! CAUTION
-!!!  DO NOT CLICK TO CREATE A DESKTOP SHORTCUT IN THE INITIAL CONTENT MANAGER CONFIGURATION, AS IT WILL CRASH AND YOU WILL NEED TO DELETE EVERYTHING RELATED TO IT AND START OVER. Just configure it as you wish, but DO NOT click on "create desktop shortcut".
+!!! DO NOT CLICK TO CREATE A DESKTOP SHORTCUT IN THE INITIAL CONTENT MANAGER CONFIGURATION, AS IT WILL CRASH AND YOU WILL NEED TO DELETE EVERYTHING RELATED TO IT AND START OVER. Just configure it as you wish, but DO NOT click on "create desktop shortcut".
 
 Now you can configure and modify it as you wish.
 I recommend using version 0.2.0 of the Custom Shaders Patch, Avoid very new or very old versions (Both work but with some instability, but I believe that happens even in Windows).
