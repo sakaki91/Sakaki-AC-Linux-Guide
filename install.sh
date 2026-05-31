@@ -55,9 +55,9 @@ elif [[ $1 == "--custom" ]]; then
         [[ -z $customDirConfirmation ]] && customDirConfirmation="y"
         if [[ $customDirConfirmation == "Y" || $customDirConfirmation == "y" ]]; then
 	    dependencyInstall
-	    CMBasedDownload
+	    CMBaseDownload
         elif [[ $customDirConfirmation == "N" || $customDirConfirmation == "n" ]]; then
-            break 2
+            break
         else
             printf "\e[0;91mERROR:\e[0m Invalid option.\n"
             sleep 2
