@@ -1,6 +1,15 @@
 #!/bin/bash
 # @sakaki91 on GitHub!
 
+primaryDependencyChecker(){
+    dependencies=(wine winetricks wget unzip zenity)
+    for cmd in "${dependencies[@]}"; do
+        if ! command -v "$cmd" >/dev/null 2>&1; then
+            printf "\e[0;91mERROR: $cmd not found\033[0m, install it and try again.\n" && exit 1
+        fi
+    done
+}
+
 CMBaseDownload(){
     mkdir -p "$GAMEPATH"/temp
     [[ ! -d "$GAMEPATH"/backup ]] && mkdir "$GAMEPATH"/backup
@@ -30,6 +39,7 @@ dependencyInstall(){
     wine reg add "HKEY_CURRENT_USER\Software\Wine\DllOverrides" /v dwrite /d native,builtin /f
 }
 
+primaryDependencyChecker
 if [[ $1 == "--native" ]]; then
     GAMEPATH="$HOME"/.local/share/Steam/steamapps/common/assettocorsa
     GAMEPREFIX="$HOME"/.local/share/Steam/steamapps/compatdata/244210/pfx
@@ -65,7 +75,7 @@ elif [[ $1 == "--custom" ]]; then
         fi
     done
 else
-    printf "\e[0;91mERROR:\e[0m Invalid option.\n\nExamples:\n"
+    printf "\n\e[0;91mERROR:\e[0m Invalid option.\n\nExamples:\n"
     printf "%-25s %0s\n" "./install --native" "Configures the locally installed game to be in the native Steam folder."
     printf "%-25s %0s\n" "./install --flatpak" "Configures the locally installed game to be in the flatpak Steam folder."
     printf "%-25s %0s\n\n" "./install --custom" "Configure the installed game to a different disk/partition."
