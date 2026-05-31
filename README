@@ -21,11 +21,11 @@ Auto Install (Experimental):
 
 First, run the game with GE-Proton9-20 (to create the prefix)
 
-	$ cd ~/
-	$ git clone https://github.com/sakaki91/Sakaki-AC-Linux-Guide
-	$ cd Sakaki-AC-Linux-Guide
-	$ chmod +x install.sh
-	$ ./install
+	$ (git clone https://github.com/sakaki91/Sakaki-AC-Linux-Guide && cd Sakaki-AC-Linux-Guide && ./install.sh --custom)
+
+!!! Why a "--custom" flag?
+* You can change the "--custom" flag to "--native" (if the game is in the default Steam directory), or "--flatpak" if you are using a flatpak installation.
+* However, if you run it as a custom installation and manually select the directories requested by the script, everything will work normally =D
 
 
 Preparing Prefix:
