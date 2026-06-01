@@ -21,7 +21,7 @@ Auto Install (Experimental):
 
 First, run the game with GE-Proton9-20 (to create the prefix)
 
-	$ (git clone https://github.com/sakaki91/Sakaki-AC-Linux-Guide && cd Sakaki-AC-Linux-Guide && ./install.sh --custom)
+	$ wget -c https://raw.githubusercontent.com/sakaki91/Sakaki-AC-Linux-Guide/refs/heads/main/install.sh && bash install.sh --custom
 
 !!! Why a "--custom" flag?
 * You can change the "--custom" flag to "--native" (if the game is in the default Steam directory), or "--flatpak" if you are using a flatpak installation.
